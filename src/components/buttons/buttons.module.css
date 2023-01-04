@@ -1,0 +1,35 @@
+.distance {
+    user-select: none;
+    padding: 0.25rem;
+    margin: 0.25rem;
+}
+
+.ball {
+    cursor: pointer;
+    display: inline-block;
+    width: 1.5rem;
+    height: 1.5rem;
+    composes: distance;
+    text-align: center;
+    border: 2px solid var(--border-color);
+    border-radius: 50%;
+}
+
+.ball:hover {
+    background-color: var(--border-color);
+}
+
+.variant {
+    cursor: pointer;
+    width: 10rem;
+    composes: distance;
+    padding: 0.5rem;
+    color: var(--font-dark);
+    font-weight: 500;
+    background-color:var(--btn) ;
+    border: none;
+}
+
+.variant:hover {
+    background-color: var(--border-color);
+}

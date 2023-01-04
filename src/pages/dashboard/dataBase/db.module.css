@@ -1,0 +1,12 @@
+.allBalls {
+    width: 27.5rem;
+    padding: 0.5rem;
+    background-image: var(--bg-color-accent);
+    border-radius: 8px;
+}
+
+.selectedNumbers {
+    display: flex;
+    align-items: center;
+    height: 2rem;
+}

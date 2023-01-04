@@ -1,8 +1,11 @@
 :root {
     --bg-color: #00334C;
+    --bg-color-accent: linear-gradient(to bottom, #00334c, #16405a, #00334c);
     --border-color: #315873;
     --font: #B1D6F6;
-    --btn: #315873;
+    --font-dark: #70a3cf;
+    --btn: #023c58;
+    --dark: #00121b;
 }
 
 body {
