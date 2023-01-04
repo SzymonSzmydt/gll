@@ -2,8 +2,8 @@ import db from './db.module.css';
 import { useState } from 'react';
 import { DbAddRecord } from './DbAddRecord';
 import { DbView } from './DbView';
-import { BtnVariant } from '../../../components/buttons/BtnVariant';
 import { Window } from '../../../components/windows/Window';
+import { BtnVariant } from '../../../components/buttons/BtnVariant';
 
 export function DataBase() {
     const [ dbAdd, setDbAdd ] = useState(false);

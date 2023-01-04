@@ -8,5 +8,28 @@
 .selectedNumbers {
     display: flex;
     align-items: center;
+    justify-content: space-between;
     height: 2rem;
+    background-color: var(--dark);
+    border-radius: 8px;
 }
+
+.number50 {
+    width: 13.75rem;
+}
+
+.number2 {
+    width: 5.5rem;
+}
+
+.signal {
+    width: 1rem;
+    height: 1rem;
+    border: 1px solid var(--border-color);
+    background-color: rgb(175, 0, 0);
+}
+
+.green {
+    background-color: #5c9900;
+}
+

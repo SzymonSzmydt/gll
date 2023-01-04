@@ -5,7 +5,7 @@
     --font: #B1D6F6;
     --font-dark: #70a3cf;
     --btn: #023c58;
-    --dark: #00121b;
+    --dark: #1B455F;
 }
 
 body {
@@ -19,4 +19,8 @@ body {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     color: var(--font);
+}
+
+hr {
+    border: 1px solid rgb(1, 82, 102);
 }
