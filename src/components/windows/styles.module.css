@@ -1,0 +1,5 @@
+.window {
+    padding: 0.5rem;
+    margin: 0.5rem;
+    border: 1px solid var(--border-color);
+}
