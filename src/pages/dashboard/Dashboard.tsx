@@ -1,9 +1,11 @@
-import { DbView } from './DbView';
+import { DataBase } from './dataBase/DataBase';
+
 
 export function Dashboard() {
     return (
         <main>
-            <DbView/>
+            <DataBase/>
+
         </main>
     )
 }
