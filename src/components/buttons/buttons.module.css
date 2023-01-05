@@ -2,6 +2,7 @@
     user-select: none;
     padding: 0.25rem;
     margin: 0.25rem;
+    border-radius: var(--radius);
 }
 
 .ball {
@@ -11,7 +12,7 @@
     height: 1.5rem;
     composes: distance;
     text-align: center;
-    border: 2px solid var(--border-color);
+    border: 2px solid var(--border-color-light);
     border-radius: 50%;
 }
 
@@ -27,7 +28,7 @@
     color: var(--font-dark);
     font-weight: 500;
     background-color:var(--btn) ;
-    border: none;
+    border: 1px solid var(--border-color-light);
 }
 
 .variant:hover {

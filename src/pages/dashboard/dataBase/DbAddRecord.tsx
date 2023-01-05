@@ -1,18 +1,16 @@
 import db from './db.module.css';
 import { Ball } from '../../../components/buttons/Ball';
 import { useState, useRef } from 'react';
-import { Window } from '../../../components/windows/Window';
 import { BtnVariant } from '../../../components/buttons/BtnVariant';
 import { doc, setDoc } from "firebase/firestore"; 
 import { dataBase } from '../../../context/firebase/firebase';
+import { Window } from '../../../components/windows/Window';
 
 const green = (num: number, val: number) => num === val ? db.green : "";
-
+const arrayGenerator = (n: number) => Array.from({length: n}, (_, i)=> i + 1);
 export function DbAddRecord() {
     const [ ballNumber50, setBallNumber50 ] = useState<number[]>([]);
     const [ ballNumber2, setBallNumber2 ] = useState<number[]>([]);
-    const numbers50 = Array.from({length: 50}, (_, i)=> i + 1);
-    const numbers10 = Array.from({length: 12}, (_, i)=> i + 1);
     const dateRef = useRef<HTMLInputElement | null>(null);
 
     const handleClick50 = (num:number) => {
@@ -24,17 +22,19 @@ export function DbAddRecord() {
         return;
     }
     const saveNumbersToFirestore = async() => {
+        const copy1 = ballNumber50.map(e => e);
+        const copy2 = ballNumber2.map(e => e);
         if (ballNumber50.length === 5 && ballNumber2.length === 2 && dateRef.current?.value) {
-            const sortAll = ballNumber50.sort((a, b)=> a - b);
-            const sortTwo = ballNumber2.sort((a, b)=> a - b);
             setDoc(doc(dataBase, 'jackpot', 'db'), { 
-                date: dateRef.current?.value,
-                normalAll: ballNumber50, 
-                normalTwo: ballNumber2,
-                sortAll: sortAll,
-                sortTwo: sortTwo
+                [dateRef.current?.value] : {
+                    normal1: ballNumber50, 
+                    normal2: ballNumber2,
+                    sort1: copy1.sort((a, b)=> a - b),
+                    sort2: copy2.sort((a, b)=> a - b)
+                }
             }, { merge: true });
         }
+        else console.error(' błąd ')
     }
     return (
         <>
@@ -50,9 +50,9 @@ export function DbAddRecord() {
                     </span>
                 </div> 
             </Window>
-            { numbers50.map(num => <Ball key={num} handleClick={()=> handleClick50(num)}> { num }</Ball>) }
+            { arrayGenerator(50).map(num => <Ball key={num} handleClick={()=> handleClick50(num)}> { num }</Ball>) }
             <hr/>
-            { numbers10.map(num => <Ball key={num} handleClick={()=> handleClick2(num)}> { num }</Ball>) }  
+            { arrayGenerator(12).map(num => <Ball key={num} handleClick={()=> handleClick2(num)}> { num }</Ball>) }  
             <input type="date" ref={dateRef} className={db.date} />
             <BtnVariant name="ZAPISZ" handleClick={saveNumbersToFirestore}/>        
         </>

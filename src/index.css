@@ -2,10 +2,18 @@
     --bg-color: #00334C;
     --bg-color-accent: linear-gradient(to bottom, #00334c, #16405a, #00334c);
     --border-color: #315873;
+    --border-color-light: #4d80a5;
     --font: #B1D6F6;
     --font-dark: #70a3cf;
     --btn: #023c58;
     --dark: #1B455F;
+    --shadow: 3px 1px 20px -2px rgba(0, 0, 0, 1);
+    --radius: 10px;
+
+
+    --red: #af0000;
+
+    --green: #5c9900;
 }
 
 body {
