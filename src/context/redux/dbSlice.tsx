@@ -1,7 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 import type { PayloadAction } from "@reduxjs/toolkit";
 
-interface Db {
+export interface Db {
   [key: string]: {
     normal1: number[];
     normal2: number[];

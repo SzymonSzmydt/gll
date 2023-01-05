@@ -1,21 +1,43 @@
-import db from './db.module.css';
-import { useState } from 'react';
-import { DbAddRecord } from './DbAddRecord';
-import { DbView } from './DbView';
-import { WindowShadow } from '../../../components/windows/WindowShadow';
-import { BtnVariant } from '../../../components/buttons/BtnVariant';
+import db from "./db.module.css";
+import { useState, useEffect, useCallback } from "react";
+import { DbAddRecord } from "./DbAddRecord";
+import { DbView } from "./DbView";
+import { WindowShadow } from "../../../components/windows/WindowShadow";
+import { BtnVariant } from "../../../components/buttons/BtnVariant";
+import { doc, getDoc } from "firebase/firestore";
+import { useDispatch } from "react-redux";
+import { updateDb, Db } from "../../../context/redux/dbSlice";
+import { dataBase } from "../../../context/firebase/firebase";
 
 export function DataBase() {
-    const [ dbAdd, setDbAdd ] = useState(false);
-    return (
-        <WindowShadow>
-            <BtnVariant 
-                name={dbAdd ? "BAZA RECORDÓW" : "DODAJ RECORD" } 
-                handleClick={()=> setDbAdd(!dbAdd)} 
-            />
-            <section className={db.allBalls}>
-                { dbAdd ? <DbAddRecord /> : <DbView /> }
-            </section>
-        </WindowShadow>
-    )
+  const [dbAdd, setDbAdd] = useState(false);
+  const dispatch = useDispatch();
+
+  const uploadDataFromServer = useCallback(async () => {
+    const docRef = doc(dataBase, "jackpot", "db");
+    const docSnap = await getDoc(docRef);
+
+    if (docSnap.exists()) {
+      console.log("Document data:", docSnap.data());
+      dispatch(updateDb(docSnap.data() as Array<Db>));
+    } else {
+      console.log("No such document!");
+    }
+  }, [dispatch]);
+
+  useEffect(() => {
+    uploadDataFromServer();
+  }, [uploadDataFromServer]);
+
+  return (
+    <WindowShadow>
+      <BtnVariant
+        name={dbAdd ? "BAZA RECORDÓW" : "DODAJ RECORD"}
+        handleClick={() => setDbAdd(!dbAdd)}
+      />
+      <section className={db.allBalls}>
+        {dbAdd ? <DbAddRecord /> : <DbView />}
+      </section>
+    </WindowShadow>
+  );
 }
