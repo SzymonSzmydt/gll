@@ -1,17 +1,19 @@
 import { createSlice } from "@reduxjs/toolkit";
 import type { PayloadAction } from "@reduxjs/toolkit";
 
+export interface Properties {
+  normal1: number[];
+  normal2: number[];
+  sort1: number[];
+  sort2: number[];
+}
+
 export interface Db {
-  [key: string]: {
-    normal1: number[];
-    normal2: number[];
-    sort1: number[];
-    sort2: number[];
-  };
+  [key: string]: Properties;
 }
 
 export interface DbState {
-  value: Db[];
+  value: Array<Db>;
 }
 
 const initialState: DbState = {

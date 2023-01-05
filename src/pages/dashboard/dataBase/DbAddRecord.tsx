@@ -50,8 +50,6 @@ export function DbAddRecord() {
       setBallNumber2([]);
     } else console.error(" błąd ");
   };
-  console.log("ballNumber50", ballNumber50);
-
   return (
     <>
       <Window>
