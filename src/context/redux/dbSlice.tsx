@@ -19,7 +19,7 @@ const initialState: DbState = {
 };
 
 export const dbSlice = createSlice({
-  name: "db",
+  name: "database",
   initialState,
   reducers: {
     updateDb: (state, action: PayloadAction<Array<Db>>) => {
@@ -29,5 +29,4 @@ export const dbSlice = createSlice({
 });
 
 export const { updateDb } = dbSlice.actions;
-
 export default dbSlice.reducer;
