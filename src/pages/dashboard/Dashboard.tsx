@@ -1,11 +1,8 @@
-import { DataBase } from './dataBase/DataBase';
-
-
+import { DataBase } from "./dataBase/DataBase";
 export function Dashboard() {
-    return (
-        <main>
-            <DataBase/>
-
-        </main>
-    )
+  return (
+    <main>
+      <DataBase />
+    </main>
+  );
 }
