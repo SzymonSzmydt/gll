@@ -33,3 +33,19 @@ body {
 hr {
     border: 1px solid rgb(1, 82, 102);
 }
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--font-dark);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--border-color-light);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--border-color);
+}

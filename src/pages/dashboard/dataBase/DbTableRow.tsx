@@ -8,16 +8,20 @@ type DbTableRowProps = {
 
 export function DbTableRow({ date, name1, name2 }: DbTableRowProps) {
   return (
-    <tr>
-      <td> {date} </td>
+    <tr className={dbStyles.nth}>
+      <td className={dbStyles.tdDate}> {date} </td>
       <td>
         {name1.map((e) => (
-          <span className={dbStyles.tdSpan}> {e} </span>
+          <div key={e} className={dbStyles.tdSpan}>
+            {e}
+          </div>
         ))}
       </td>
       <td>
         {name2.map((e) => (
-          <span className={dbStyles.tdSpan}> {e} </span>
+          <div key={e} className={dbStyles.tdSpan}>
+            {e}
+          </div>
         ))}
       </td>
     </tr>

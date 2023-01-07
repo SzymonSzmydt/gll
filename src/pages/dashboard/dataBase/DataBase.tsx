@@ -35,7 +35,7 @@ export function DataBase() {
         name={dbAdd ? "BAZA RECORDÓW" : "DODAJ RECORD"}
         handleClick={() => setDbAdd(!dbAdd)}
       />
-      <section className={db.allBalls}>
+      <section className={db.section}>
         {dbAdd ? <DbAddRecord /> : <DbView />}
       </section>
     </WindowShadow>

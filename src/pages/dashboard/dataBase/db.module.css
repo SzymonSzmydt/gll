@@ -1,5 +1,8 @@
-.allBalls {
+.section {
     width: 27.5rem;
+    height: 25rem;
+    overflow: auto;
+    height: auto;
     padding: 0.5rem;
     background-image: var(--bg-color-accent);
     border-radius: var(--radius);
@@ -59,7 +62,36 @@
     background-color: var(--bg-shadow-dark);
 }
 
-.tr {
-      border-bottom: 1px solid var(--border-color);
+.table tbody {
+    height: 25rem;
 }
 
+.tr {
+    padding: 0.25rem;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.tr > td {
+    text-align: center;
+}
+
+.div {
+    overflow: auto;
+    width: 100%;
+    height: 25rem;
+}
+
+.nth:nth-child(2n+1) {
+    background-color: var(--bg-color);
+}
+
+.tdSpan {
+    display: inline-block;
+    width: 2rem;
+    margin: 0 0.25rem;
+    text-align: center;
+}
+
+.tdDate {
+    color: var(--font-dark);
+}
