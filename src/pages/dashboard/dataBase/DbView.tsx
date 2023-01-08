@@ -28,11 +28,11 @@ export function DbView() {
                         (a, b) =>
                           b.date
                             .split("")
-                            .filter((e: any) => e !== "-")
+                            .filter((e: string) => e !== "-")
                             .join("") -
                           a.date
                             .split("")
-                            .filter((e: any) => e !== "-")
+                            .filter((e: string) => e !== "-")
                             .join("")
                       )
                       .map((e) => <DbTableRow key={e.date} {...e} />)

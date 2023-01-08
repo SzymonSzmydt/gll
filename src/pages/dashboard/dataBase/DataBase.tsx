@@ -18,7 +18,6 @@ export function DataBase() {
     const docSnap = await getDoc(docRef);
 
     if (docSnap.exists()) {
-      console.log("Document data:", docSnap.data());
       dispatch(updateDb(docSnap.data() as Array<Db>));
     } else {
       console.log("No such document!");
@@ -27,7 +26,7 @@ export function DataBase() {
 
   useEffect(() => {
     uploadDataFromServer();
-  }, [uploadDataFromServer]);
+  }, [uploadDataFromServer, dbAdd]);
 
   return (
     <WindowShadow>
