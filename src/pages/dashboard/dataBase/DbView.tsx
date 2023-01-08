@@ -23,15 +23,27 @@ export function DbView() {
             <td colSpan={3}>
               <div className={dbStyles.div}>
                 {db.length > 0
-                  ? db.map((e) => <DbTableRow key={e.date} {...e} />)
+                  ? db
+                      .sort(
+                        (a, b) =>
+                          b.date
+                            .split("")
+                            .filter((e: any) => e !== "-")
+                            .join("") -
+                          a.date
+                            .split("")
+                            .filter((e: any) => e !== "-")
+                            .join("")
+                      )
+                      .map((e) => <DbTableRow key={e.date} {...e} />)
                   : null}
               </div>
             </td>
           </tr>
         </tbody>
       </table>
-      <span className={dbStyles.tdDate}>Ilość recordów: </span>
-      <span> {db.length} </span>
+      <span className={dbStyles.info}>Ilość recordów: </span>
+      <span> {db.length ?? null} </span>
     </>
   );
 }

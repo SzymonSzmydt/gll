@@ -1,6 +1,5 @@
 .section {
     width: 27.5rem;
-    height: 24.75rem;
     overflow: auto;
     height: auto;
     padding: 0.5rem;
@@ -62,10 +61,6 @@
     background-color: var(--bg-shadow-dark);
 }
 
-.table tbody {
-    height: 25rem;
-}
-
 .tr {
     padding: 0.25rem;
     border-bottom: 1px solid var(--border-color);
@@ -78,7 +73,7 @@
 .div {
     overflow: auto;
     width: 100%;
-    height: 25rem;
+    height: 24.5rem;
 }
 
 .nth:nth-child(2n+1) {
@@ -93,11 +88,16 @@
 }
 
 .tdDate {
-    padding: 0.25rem 0.75rem;
+    padding: 0.25rem 1rem;
     color: var(--font-dark);
     font-size: 0.75rem;
 }
 
 .fontDark {
     color: var(--green);
+}
+
+.info {
+    margin: 0.5rem 0.75rem;
+    font-size: 0.75rem;
 }
