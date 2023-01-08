@@ -1,10 +1,10 @@
-import db from "./db.module.css";
-import { Ball } from "../../../components/buttons/Ball";
+import db from "./record.module.css";
+import { Ball } from "../../../../components/buttons/Ball";
 import { useState, useRef } from "react";
-import { BtnVariant } from "../../../components/buttons/BtnVariant";
+import { BtnVariant } from "../../../../components/buttons/BtnVariant";
 import { doc, setDoc } from "firebase/firestore";
-import { dataBase } from "../../../context/firebase/firebase";
-import { Window } from "../../../components/windows/Window";
+import { dataBase } from "../../../../context/firebase/firebase";
+import { Window } from "../../../../components/windows/Window";
 
 const green = (num: number, val: number) => (num === val ? db.green : "");
 const arrayGenerator = (n: number) =>

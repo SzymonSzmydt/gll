@@ -1,7 +1,7 @@
 import db from "./db.module.css";
 import { useState, useEffect, useCallback } from "react";
-import { DbAddRecord } from "./DbAddRecord";
-import { DbView } from "./DbView";
+import { DbAddRecord } from "./records/DbAddRecord";
+import { DbView } from "./records/DbView";
 import { WindowShadow } from "../../../components/windows/WindowShadow";
 import { BtnVariant } from "../../../components/buttons/BtnVariant";
 import { doc, getDoc } from "firebase/firestore";

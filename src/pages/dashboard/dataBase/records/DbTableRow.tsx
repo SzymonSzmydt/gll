@@ -1,4 +1,4 @@
-import dbStyles from "./db.module.css";
+import dbStyles from "./record.module.css";
 
 type DbTableRowProps = {
   date: string;

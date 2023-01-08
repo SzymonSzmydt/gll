@@ -1,5 +1,5 @@
-import dbStyles from "./db.module.css";
-import type { RootState } from "../../../context/redux/Store";
+import dbStyles from "./record.module.css";
+import type { RootState } from "../../../../context/redux/Store";
 import { useSelector } from "react-redux";
 import { DbTableRow } from "./DbTableRow";
 
