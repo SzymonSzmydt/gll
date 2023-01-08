@@ -2,6 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 import type { PayloadAction } from "@reduxjs/toolkit";
 
 export interface Properties {
+  date: string;
   normal1: number[];
   normal2: number[];
   sort1: number[];

@@ -27,8 +27,8 @@ export function DbAddRecord() {
     return;
   };
   const saveNumbersToFirestore = async () => {
-    const copy1 = ballNumber50.map((e) => e);
-    const copy2 = ballNumber2.map((e) => e);
+    const copy1 = ballNumber50.map((e) => e).sort((a, b) => a - b);
+    const copy2 = ballNumber2.map((e) => e).sort((a, b) => a - b);
     if (
       ballNumber50.length === 5 &&
       ballNumber2.length === 2 &&
@@ -38,10 +38,11 @@ export function DbAddRecord() {
         doc(dataBase, "jackpot", "db"),
         {
           [dateRef.current?.value]: {
+            date: dateRef.current?.value,
             normal1: ballNumber50,
             normal2: ballNumber2,
-            sort1: copy1.sort((a, b) => a - b),
-            sort2: copy2.sort((a, b) => a - b),
+            sort1: copy1,
+            sort2: copy2,
           },
         },
         { merge: true }

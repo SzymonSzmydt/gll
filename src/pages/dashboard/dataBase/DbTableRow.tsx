@@ -2,28 +2,39 @@ import dbStyles from "./db.module.css";
 
 type DbTableRowProps = {
   date: string;
-  name1: Array<number>;
-  name2: Array<number>;
+  normal1: Array<number>;
+  normal2: Array<number>;
 };
 
-export function DbTableRow({ date, name1, name2 }: DbTableRowProps) {
+export function DbTableRow({ date, normal1, normal2 }: DbTableRowProps) {
   return (
-    <tr className={dbStyles.nth}>
-      <td className={dbStyles.tdDate}> {date} </td>
-      <td>
-        {name1.map((e) => (
-          <div key={e} className={dbStyles.tdSpan}>
-            {e}
-          </div>
-        ))}
-      </td>
-      <td>
-        {name2.map((e) => (
-          <div key={e} className={dbStyles.tdSpan}>
-            {e}
-          </div>
-        ))}
-      </td>
-    </tr>
+    <table>
+      <tfoot>
+        <tr className={dbStyles.nth}>
+          <td className={dbStyles.tdDate}> {date ?? null}</td>
+          <td>
+            {normal1
+              ? normal1.map((e) => (
+                  <div key={e} className={dbStyles.tdSpan}>
+                    {e}
+                  </div>
+                ))
+              : null}
+          </td>
+          <td>
+            {normal2
+              ? normal2.map((e) => (
+                  <div
+                    key={e}
+                    className={`${dbStyles.tdSpan} + ${dbStyles.fontDark}`}
+                  >
+                    {e}
+                  </div>
+                ))
+              : null}
+          </td>
+        </tr>
+      </tfoot>
+    </table>
   );
 }
