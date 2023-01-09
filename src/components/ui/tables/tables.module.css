@@ -1,0 +1,18 @@
+.table {
+  margin: 0.5rem;
+}
+
+.tr {
+  background-color: var(--bg-shadow-dark);
+}
+
+.td {
+  text-align: right;
+  padding: 0.25rem 0.5rem;
+  font-size: 0.85rem;
+}
+
+.tdcolor {
+  composes: td;
+  background-color: var(--border-color);
+}
