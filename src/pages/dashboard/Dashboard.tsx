@@ -4,8 +4,12 @@ import { ControlPanel } from "./controlPanel/ControlPanel";
 export function Dashboard() {
   return (
     <main className={dash.main}>
-      <DataBase />
-      <ControlPanel />
+      <section>
+        <DataBase />
+      </section>
+      <section>
+        <ControlPanel />
+      </section>
     </main>
   );
 }

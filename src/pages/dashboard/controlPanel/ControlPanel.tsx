@@ -1,7 +1,10 @@
 import { WindowShadow } from "../../../components/windows/WindowShadow";
+import { Nav } from "./nav/Nav";
 
 export function ControlPanel() {
-  return <WindowShadow>
-    
-  </WindowShadow>;
+  return (
+    <WindowShadow>
+      <Nav />
+    </WindowShadow>
+  );
 }
