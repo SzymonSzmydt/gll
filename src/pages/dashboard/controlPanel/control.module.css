@@ -1,0 +1,9 @@
+.tr {
+  background-color: var(--bg-shadow-dark);
+}
+
+.td {
+  text-align: right;
+  padding: 0 0.5rem;
+  font-size: 0.85rem;
+}
