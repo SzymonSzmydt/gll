@@ -5,10 +5,10 @@ import { BtnVariant } from "../../../../components/buttons/BtnVariant";
 import { doc, setDoc } from "firebase/firestore";
 import { dataBase } from "../../../../context/firebase/firebase";
 import { Window } from "../../../../components/windows/Window";
+import { arrayGenerator } from "../../../../context/hooks/functions";
 
 const green = (num: number, val: number) => (num === val ? db.green : "");
-const arrayGenerator = (n: number) =>
-  Array.from({ length: n }, (_, i) => i + 1);
+
 export function DbAddRecord() {
   const [ballNumber50, setBallNumber50] = useState<number[]>([]);
   const [ballNumber2, setBallNumber2] = useState<number[]>([]);
