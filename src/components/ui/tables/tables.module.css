@@ -4,13 +4,27 @@
 }
 
 .tr {
+  cursor: pointer;
   background-color: var(--bg-shadow-dark);
 }
 
+.tr:hover {
+  background-color: var(--border-color);
+}
+
 .tdHead {
+  background-color: var(--bg-shadow-dark);
   text-align: right;
   padding: 0.35rem 0.5rem;
-  font-size: 0.85rem;
+  font-size: 0.95rem;
+}
+
+.tdHead:first-child {
+  border-radius: 8px 0 0 0;
+}
+
+.tdHead:last-child {
+  border-radius: 0 8px 0 0;
 }
 
 .td {
@@ -19,7 +33,7 @@
   font-size: 0.85rem;
 }
 
-.tdcolor {
-  composes: td;
-  background-color: var(--border-color);
+.td:first-child {
+  color: var(--font-accent);
+  font-size: 0.75rem;
 }

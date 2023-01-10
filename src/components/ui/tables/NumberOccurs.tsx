@@ -20,7 +20,7 @@ export function NumberOccurs({ data, lengths }: Props) {
         {data.length > 0
           ? data.map((e, i) => (
               <tr key={i} className={table.tr}>
-                <td className={table.tdcolor}> {e.num} </td>
+                <td className={table.td}> {e.num} </td>
                 <td className={table.td}> {e["date"].length} </td>
                 <td className={table.td}>
                   {`${((e["date"].length / lengths) * 100).toFixed()} %`}
