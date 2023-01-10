@@ -9,18 +9,23 @@ export type howManyOccursVoid = {
 
 export function howManyOccured(
   n: number,
-  data: readonly Db[]
+  data: Db[],
+  name: string
 ): howManyOccursVoid {
   const countOccures = data
-    .map((e: any) =>
-      e["normal1"].includes(n) ? { num: n, date: e.date } : null
-    )
+    .map((e: any) => (e[name].includes(n) ? { num: n, date: e.date } : null))
     .filter((e: any) => e != null);
-  const date: string[] = [];
-  let num: any;
-  countOccures.forEach((e: any) => {
-    date.push(e.date);
-    num = e.num;
-  });
-  return { num: num, date: date };
+  return {
+    num: countOccures.map((e: any) => e.num)[0],
+    date: countOccures.map((e: any) => e.date),
+  };
 }
+
+export const sortedOccured = (
+  lengths: number,
+  name: string,
+  db: Db[]
+): howManyOccursVoid[] =>
+  arrayGenerator(lengths)
+    .map((e: number) => howManyOccured(e, db, name))
+    .sort((a, b) => b["date"].length - a["date"].length);
