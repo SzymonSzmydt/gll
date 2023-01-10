@@ -42,8 +42,7 @@ export function DbView() {
           </tr>
         </tbody>
       </table>
-      <span className={dbStyles.info}>Ilość recordów: </span>
-      <span> {db.length ?? null} </span>
+      <span className={dbStyles.info}>Ilość recordów: {db.length ?? null}</span>
     </>
   );
 }

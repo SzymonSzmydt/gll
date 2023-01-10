@@ -2,7 +2,7 @@ import db from "./db.module.css";
 import { useState, useEffect, useCallback } from "react";
 import { DbAddRecord } from "./records/DbAddRecord";
 import { DbView } from "./records/DbView";
-import { WindowShadow } from "../../../components/windows/WindowShadow";
+import { Window } from "../../../components/windows/Window";
 import { BtnVariant } from "../../../components/buttons/BtnVariant";
 import { doc, getDoc } from "firebase/firestore";
 import { useDispatch } from "react-redux";
@@ -29,7 +29,7 @@ export function DataBase() {
   }, [uploadDataFromServer, dbAdd]);
 
   return (
-    <WindowShadow>
+    <Window shadow={true}>
       <BtnVariant
         name={dbAdd ? "BAZA RECORDÓW" : "DODAJ RECORD"}
         handleClick={() => setDbAdd(!dbAdd)}
@@ -37,6 +37,6 @@ export function DataBase() {
       <section className={db.section}>
         {dbAdd ? <DbAddRecord /> : <DbView />}
       </section>
-    </WindowShadow>
+    </Window>
   );
 }

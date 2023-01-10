@@ -1,5 +1,5 @@
 import ctr from "./control.module.css";
-import { WindowShadow } from "../../../components/windows/WindowShadow";
+import { Window } from "../../../components/windows/Window";
 import { Nav } from "./nav/Nav";
 import { useSelector } from "react-redux";
 import { RootState } from "../../../context/redux/Store";
@@ -20,7 +20,7 @@ export function ControlPanel() {
   const fourSectionOfData = data50.filter((e, i) => i >= 42);
 
   return (
-    <WindowShadow>
+    <Window shadow={true}>
       <Nav />
       <div className={ctr.flex}>
         <NumberOccurs data={firstSectionOfData} lengths={db.length} />
@@ -29,6 +29,6 @@ export function ControlPanel() {
         <NumberOccurs data={fourSectionOfData} lengths={db.length} />
         <NumberOccurs data={data2} lengths={db.length} />
       </div>
-    </WindowShadow>
+    </Window>
   );
 }
