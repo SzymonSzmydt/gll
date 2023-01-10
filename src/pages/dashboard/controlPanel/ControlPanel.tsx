@@ -14,7 +14,9 @@ export function ControlPanel() {
   const db = useSelector((state: RootState) => state.database.value);
 
   const data: howManyOccursVoid[] = db
-    ? arrayGenerator(50).map((e: number) => howManyOccured(e, db))
+    ? arrayGenerator(50)
+        .map((e: number) => howManyOccured(e, db))
+        .sort((a, b) => b["date"].length - a["date"].length)
     : [];
 
   const firstSectionOfData = data.filter((e, i) => i <= 14);
