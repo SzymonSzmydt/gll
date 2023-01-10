@@ -6,7 +6,7 @@ import { WindowShadow } from "../../../components/windows/WindowShadow";
 import { BtnVariant } from "../../../components/buttons/BtnVariant";
 import { doc, getDoc } from "firebase/firestore";
 import { useDispatch } from "react-redux";
-import { updateDb, Db } from "../../../context/redux/dbSlice";
+import { updateDb } from "../../../context/redux/dbSlice";
 import { dataBase } from "../../../context/firebase/firebase";
 
 export function DataBase() {
@@ -18,7 +18,7 @@ export function DataBase() {
     const docSnap = await getDoc(docRef);
 
     if (docSnap.exists()) {
-      dispatch(updateDb(docSnap.data() as Array<Db>));
+      dispatch(updateDb(Object.values(docSnap.data())));
     } else {
       console.log("No such document!");
     }

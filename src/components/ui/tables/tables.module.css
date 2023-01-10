@@ -6,6 +6,12 @@
   background-color: var(--bg-shadow-dark);
 }
 
+.tdHead {
+  text-align: right;
+  padding: 0.35rem 0.5rem;
+  font-size: 0.85rem;
+}
+
 .td {
   text-align: right;
   padding: 0.25rem 0.5rem;

@@ -1,16 +1,12 @@
 import { createSlice } from "@reduxjs/toolkit";
 import type { PayloadAction } from "@reduxjs/toolkit";
 
-export interface Properties {
+export interface Db {
   date: string;
   normal1: number[];
   normal2: number[];
   sort1: number[];
   sort2: number[];
-}
-
-export interface Db {
-  [key: string]: Properties;
 }
 
 export interface DbState {

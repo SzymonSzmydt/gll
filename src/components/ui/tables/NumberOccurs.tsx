@@ -3,16 +3,17 @@ import { howManyOccursVoid } from "../../../context/hooks/functions";
 
 type Props = {
   data: howManyOccursVoid[];
+  lengths: number;
 };
 
-export function NumberOccurs({ data }: Props) {
+export function NumberOccurs({ data, lengths }: Props) {
   return (
     <table className={table.table}>
       <thead>
         <tr>
-          <td className={table.td}> Liczba </td>
-          <td className={table.td}> Wystąpienia </td>
-          <td className={table.td}> Oscylacja </td>
+          <td className={table.tdHead}> Liczba </td>
+          <td className={table.tdHead}> Wystąpienia </td>
+          <td className={table.tdHead}> Oscylacja </td>
         </tr>
       </thead>
       <tbody>
@@ -22,7 +23,7 @@ export function NumberOccurs({ data }: Props) {
                 <td className={table.tdcolor}> {e.num} </td>
                 <td className={table.td}> {e["date"].length} </td>
                 <td className={table.td}>
-                  {`${((e["date"].length / data.length) * 100).toFixed()} %`}
+                  {`${((e["date"].length / lengths) * 100).toFixed()} %`}
                 </td>
               </tr>
             ))
