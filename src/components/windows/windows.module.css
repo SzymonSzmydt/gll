@@ -10,17 +10,20 @@
 }
 
 .windowWithClose {
-  composes: window;
+  composes: window shadow;
   text-align: right;
+  position: absolute;
+  background-color: var(--bg-color);
 }
 
 .close {
   text-align: right;
+  margin-bottom: 1rem;
 }
 
 .closeText {
   cursor: pointer;
-  padding: 0.25rem 0.75rem;
+  padding: 0 0.75rem;
   background-color: var(--bg-shadow-dark);
   border-radius: var(--radius);
 }

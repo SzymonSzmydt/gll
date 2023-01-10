@@ -1,8 +1,21 @@
 import { WindowWithCloseBtn } from "../../windows/WindowWithCloseBtn";
-export function DetailedInstances() {
+
+type Data = {
+  num: number;
+  date: string[];
+};
+type DetailedProps = {
+  data: Data;
+  handleClose: () => void;
+};
+export function DetailedInstances({ handleClose, data }: DetailedProps) {
+  console.log(data);
+
   return (
-    <WindowWithCloseBtn>
-      <div> Jestem widoczny !</div>
+    <WindowWithCloseBtn handleClose={handleClose}>
+      <p>
+        Liczba {data.num} wystąpiła {data.date.length} razy.
+      </p>
     </WindowWithCloseBtn>
   );
 }

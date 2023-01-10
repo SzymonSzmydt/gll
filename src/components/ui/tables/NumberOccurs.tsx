@@ -10,6 +10,14 @@ type Props = {
 
 export function NumberOccurs({ data, lengths }: Props) {
   const [isPopupVisible, setIsPopupVisible] = useState(false);
+  const [detailedData, setDetailedData] = useState<howManyOccursVoid>(
+    {} as howManyOccursVoid
+  );
+
+  const handleClick = (item: howManyOccursVoid) => {
+    setIsPopupVisible(true);
+    setDetailedData(item);
+  };
 
   return (
     <>
@@ -24,11 +32,7 @@ export function NumberOccurs({ data, lengths }: Props) {
         <tbody>
           {data.length > 0
             ? data.map((e, i) => (
-                <tr
-                  key={i}
-                  className={table.tr}
-                  onClick={() => setIsPopupVisible(true)}
-                >
+                <tr key={i} className={table.tr} onClick={() => handleClick(e)}>
                   <td className={table.td}> {e.num} </td>
                   <td className={table.td}> {e["date"].length} </td>
                   <td className={table.td}>
@@ -39,7 +43,12 @@ export function NumberOccurs({ data, lengths }: Props) {
             : null}
         </tbody>
       </table>
-      {isPopupVisible ? <DetailedInstances /> : null}
+      {isPopupVisible && detailedData ? (
+        <DetailedInstances
+          handleClose={() => setIsPopupVisible(false)}
+          data={detailedData}
+        />
+      ) : null}
     </>
   );
 }

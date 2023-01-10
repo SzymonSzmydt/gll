@@ -19,6 +19,7 @@ export function ControlPanel() {
   const thirdSectionOfData = data50.filter((e, i) => i >= 28 && i < 42);
   const fourSectionOfData = data50.filter((e, i) => i >= 42);
 
+  
   return (
     <Window shadow={true}>
       <Nav />
