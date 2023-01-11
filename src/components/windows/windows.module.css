@@ -13,6 +13,7 @@
   composes: window shadow;
   text-align: right;
   position: absolute;
+  top: 2rem;
   background-color: var(--bg-color);
 }
 

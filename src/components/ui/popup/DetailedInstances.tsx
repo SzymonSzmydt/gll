@@ -16,6 +16,13 @@ export function DetailedInstances({ handleClose, data }: DetailedProps) {
       <p>
         Liczba {data.num} wystąpiła {data.date.length} razy.
       </p>
+      <table>
+        <thead>
+          <tr>
+            <td></td>
+          </tr>
+        </thead>
+      </table>
     </WindowWithCloseBtn>
   );
 }
