@@ -1,0 +1,11 @@
+.box {
+  width: fit-content;
+  padding: 0 0.5rem;
+  border: 1px solid var(--border-color-light);
+}
+
+.border {
+  width: 100%;
+  text-align: center;
+  border-bottom: 1px solid var(--border-color);
+}

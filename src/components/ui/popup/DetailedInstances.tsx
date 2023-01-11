@@ -1,4 +1,6 @@
 import { WindowWithCloseBtn } from "../../windows/WindowWithCloseBtn";
+import { Ball } from "../../buttons/Ball";
+import popup from "./popup.module.css";
 
 type Data = {
   num: number;
@@ -14,15 +16,16 @@ export function DetailedInstances({ handleClose, data }: DetailedProps) {
   return (
     <WindowWithCloseBtn handleClose={handleClose}>
       <p>
-        Liczba {data.num} wystąpiła {data.date.length} razy.
+        Liczba <Ball> {data.num} </Ball> wystąpiła {data.date.length} razy.
       </p>
-      <table>
-        <thead>
-          <tr>
-            <td></td>
-          </tr>
-        </thead>
-      </table>
+      <section>
+        <div className={popup.box}>
+          <div className={popup.border}>Data</div>
+          {data.date.sort().map((e) => (
+            <div className={popup.nth}> {e} </div>
+          ))}
+        </div>
+      </section>
     </WindowWithCloseBtn>
   );
 }
