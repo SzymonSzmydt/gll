@@ -15,15 +15,19 @@ export function DetailedInstances({ handleClose, data }: DetailedProps) {
 
   return (
     <WindowWithCloseBtn handleClose={handleClose}>
-      <p>
-        Liczba <Ball> {data.num} </Ball> wystąpiła {data.date.length} razy.
+      <p className={popup.p}>
+        Liczba <Ball> {data.num} </Ball> wystąpiła
+        <span className={popup.accent}>{data.date.length}</span> razy.
       </p>
-      <section>
+      <section className={popup.flex}>
         <div className={popup.box}>
           <div className={popup.border}>Data</div>
           {data.date.sort().map((e) => (
             <div className={popup.nth}> {e} </div>
           ))}
+        </div>
+        <div className={popup.box}>
+          <div className={popup.border}>Wystąpienie</div>
         </div>
       </section>
     </WindowWithCloseBtn>
