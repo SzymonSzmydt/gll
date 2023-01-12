@@ -8,6 +8,10 @@
   background-color: var(--bg-shadow-dark);
 }
 
+.accent {
+  background-color: var(--color-accent);
+}
+
 .tr:hover {
   background-color: var(--border-color);
 }

@@ -1,6 +1,8 @@
 import table from "./tables.module.css";
 import { howManyOccursVoid } from "../../../context/hooks/functions";
 import { Dispatch, SetStateAction } from "react";
+import { useSelector } from "react-redux";
+import { RootState } from "../../../context/redux/Store";
 
 type Props = {
   data: howManyOccursVoid[];
@@ -15,6 +17,7 @@ export function NumberOccurs({
   setIsPopupVisible,
   setDetailedData,
 }: Props) {
+  const lightBase = useSelector((state: RootState) => state.light.value);
   const handleClick = (item: howManyOccursVoid) => {
     setIsPopupVisible(true);
     setDetailedData(item);
@@ -31,7 +34,11 @@ export function NumberOccurs({
       <tbody>
         {data.length > 0
           ? data.map((e, i) => (
-              <tr key={i} className={table.tr} onClick={() => handleClick(e)}>
+              <tr
+                key={i}
+                className={lightBase.includes(e.num) ? table.accent : table.tr}
+                onClick={() => handleClick(e)}
+              >
                 <td className={table.td}> {e.num} </td>
                 <td className={table.td}> {e["date"].length} </td>
                 <td className={table.td}>

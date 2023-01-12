@@ -1,4 +1,6 @@
 import dbStyles from "./record.module.css";
+import { useDispatch } from "react-redux";
+import { updateLight } from "../../../../context/redux/numbersLight";
 
 type DbTableRowProps = {
   date: string;
@@ -7,10 +9,14 @@ type DbTableRowProps = {
 };
 
 export function DbTableRow({ date, normal1, normal2 }: DbTableRowProps) {
+  const dispatch = useDispatch();
   return (
     <table>
       <tfoot>
-        <tr className={dbStyles.nth}>
+        <tr
+          className={dbStyles.nth}
+          onClick={() => dispatch(updateLight(normal1))}
+        >
           <td className={dbStyles.tdDate}> {date ?? null}</td>
           <td>
             {normal1
