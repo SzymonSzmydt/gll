@@ -18,10 +18,10 @@ export function DetailedInstances({ handleClose, data }: DetailedProps) {
   const drawID = createDrawNumbers(sortedId);
   return (
     <WindowWithCloseBtn handleClose={handleClose}>
-      <p className={popup.p}>
-        Liczba <Ball> {data.num} </Ball> wystąpiła
+      <div className={popup.p}>
+        Liczba <Ball> {data.num} </Ball> wystąpiła&nbsp;
         <span className={popup.accent}>{data.date.length}</span> razy.
-      </p>
+      </div>
       <section className={popup.flex}>
         <SingleTable data={sortedId} name={"Losowanie"} />
         <SingleTable
@@ -30,7 +30,7 @@ export function DetailedInstances({ handleClose, data }: DetailedProps) {
           data={data.date.sort()}
           name={"Data"}
         />
-        <SingleTable name={"Odstęp"} data={drawID} />
+        <SingleTable name={"Wystąpienie"} data={[0].concat(drawID)} />
       </section>
     </WindowWithCloseBtn>
   );
