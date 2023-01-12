@@ -1,8 +1,11 @@
 import { WindowWithCloseBtn } from "../../windows/WindowWithCloseBtn";
 import { Ball } from "../../buttons/Ball";
 import popup from "./popup.module.css";
+import { SingleTable } from "../tables/SingleTable";
+import { minSort, createDrawNumbers } from "../../../context/hooks/simple";
 
 type Data = {
+  id: number[];
   num: number;
   date: string[];
 };
@@ -11,8 +14,8 @@ type DetailedProps = {
   handleClose: () => void;
 };
 export function DetailedInstances({ handleClose, data }: DetailedProps) {
-  console.log(data);
-
+  const sortedId = minSort(data.id);
+  const drawID = createDrawNumbers(sortedId);
   return (
     <WindowWithCloseBtn handleClose={handleClose}>
       <p className={popup.p}>
@@ -20,15 +23,14 @@ export function DetailedInstances({ handleClose, data }: DetailedProps) {
         <span className={popup.accent}>{data.date.length}</span> razy.
       </p>
       <section className={popup.flex}>
-        <div className={popup.box}>
-          <div className={popup.border}>Data</div>
-          {data.date.sort().map((e) => (
-            <div className={popup.nth}> {e} </div>
-          ))}
-        </div>
-        <div className={popup.box}>
-          <div className={popup.border}>Wystąpienie</div>
-        </div>
+        <SingleTable data={sortedId} name={"Losowanie"} />
+        <SingleTable
+          id={data.id}
+          num={data.num}
+          data={data.date.sort()}
+          name={"Data"}
+        />
+        <SingleTable name={"Odstęp"} data={drawID} />
       </section>
     </WindowWithCloseBtn>
   );

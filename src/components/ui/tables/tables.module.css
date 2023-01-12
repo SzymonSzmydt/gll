@@ -37,3 +37,21 @@
   color: var(--font-accent);
   font-size: 0.75rem;
 }
+
+.box {
+  margin: 0 0.5rem;
+  border: 1px solid var(--border-color-light);
+}
+
+.title {
+  padding: 0 0.5rem;
+  text-align: center;
+  border-bottom: 1px solid var(--border-color);
+  background-color: var(--bg-shadow-dark);
+}
+
+.map {
+  padding: 0 0.5rem;
+  text-align: center;
+  font-size: 0.85rem;
+}
