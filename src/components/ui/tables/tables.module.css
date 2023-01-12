@@ -8,11 +8,16 @@
   background-color: var(--bg-shadow-dark);
 }
 
+.tr:hover {
+  background-color: var(--border-color);
+}
+
 .accent {
+  cursor: pointer;
   background-color: var(--color-accent);
 }
 
-.tr:hover {
+.accent:hover {
   background-color: var(--border-color);
 }
 

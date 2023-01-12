@@ -31,30 +31,35 @@ export function ControlPanel() {
       <Nav />
       <div className={ctr.flex}>
         <NumberOccurs
+          type="normal1"
           setIsPopupVisible={setIsPopupVisible}
           setDetailedData={setDetailedData}
           data={firstSectionOfData}
           lengths={db.length}
         />
         <NumberOccurs
+          type="normal1"
           setIsPopupVisible={setIsPopupVisible}
           setDetailedData={setDetailedData}
           data={secondSectionOfData}
           lengths={db.length}
         />
         <NumberOccurs
+          type="normal1"
           setIsPopupVisible={setIsPopupVisible}
           setDetailedData={setDetailedData}
           data={thirdSectionOfData}
           lengths={db.length}
         />
         <NumberOccurs
+          type="normal1"
           setIsPopupVisible={setIsPopupVisible}
           setDetailedData={setDetailedData}
           data={fourSectionOfData}
           lengths={db.length}
         />
         <NumberOccurs
+          type="normal2"
           setIsPopupVisible={setIsPopupVisible}
           setDetailedData={setDetailedData}
           data={data2}
