@@ -19,6 +19,7 @@ export function Statistics({ data50, data12, lengths }: StatisticsProps) {
   const secondSectionOfData = data50.filter((e, i) => i >= 14 && i < 28);
   const thirdSectionOfData = data50.filter((e, i) => i >= 28 && i < 42);
   const fourSectionOfData = data50.filter((e, i) => i >= 42);
+
   return (
     <>
       <div className={ctr.flex}>

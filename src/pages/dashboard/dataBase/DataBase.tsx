@@ -6,8 +6,16 @@ import { Window } from "../../../components/windows/Window";
 import { BtnVariant } from "../../../components/buttons/BtnVariant";
 import { doc, getDoc } from "firebase/firestore";
 import { useDispatch } from "react-redux";
-import { updateDb } from "../../../context/redux/dbSlice";
+import {
+  updateDb,
+  updateDb50,
+  updateDb12,
+} from "../../../context/redux/dbSlice";
 import { dataBase } from "../../../context/firebase/firebase";
+import {
+  howManyOccursVoid,
+  sortedOccured,
+} from "../../../context/hooks/functions";
 
 export function DataBase() {
   const [dbAdd, setDbAdd] = useState(false);
@@ -18,7 +26,12 @@ export function DataBase() {
     const docSnap = await getDoc(docRef);
 
     if (docSnap.exists()) {
-      dispatch(updateDb(Object.values(docSnap.data())));
+      const db = Object.values(docSnap.data());
+      const data50: howManyOccursVoid[] = sortedOccured(50, "normal1", db);
+      const data12: howManyOccursVoid[] = sortedOccured(12, "normal2", db);
+      dispatch(updateDb(db));
+      dispatch(updateDb50(data50));
+      dispatch(updateDb12(data12));
     } else {
       console.log("No such document!");
     }
