@@ -1,5 +1,5 @@
 import db from "./db.module.css";
-import { useState, useEffect, useCallback } from "react";
+import { useState } from "react";
 import { DbAddRecord } from "./records/DbAddRecord";
 import { DbView } from "./records/DbView";
 import { Window } from "../../../components/windows/Window";
@@ -13,7 +13,7 @@ export function DataBase() {
   const [dbAdd, setDbAdd] = useState(false);
   const dispatch = useDispatch();
 
-  const uploadDataFromServer = useCallback(async () => {
+  const uploadDataFromServer = async () => {
     const docRef = doc(dataBase, "jackpot", "db");
     const docSnap = await getDoc(docRef);
 
@@ -22,7 +22,7 @@ export function DataBase() {
     } else {
       console.log("No such document!");
     }
-  }, [dispatch]);
+  };
 
   return (
     <Window shadow={true}>

@@ -2,7 +2,7 @@ import { WindowWithCloseBtn } from "../../windows/WindowWithCloseBtn";
 import { Ball } from "../../buttons/Ball";
 import popup from "./popup.module.css";
 import { SingleTable } from "../tables/SingleTable";
-import { minSort, createDrawNumbers } from "../../../context/hooks/simple";
+import { numberSort, createDrawNumbers } from "../../../context/hooks/simple";
 
 type Data = {
   id: number[];
@@ -14,7 +14,7 @@ type DetailedProps = {
   handleClose: () => void;
 };
 export function DetailedInstances({ handleClose, data }: DetailedProps) {
-  const sortedId = minSort(data.id);
+  const sortedId = numberSort(data.id);
   const drawID = createDrawNumbers(sortedId);
   return (
     <WindowWithCloseBtn handleClose={handleClose}>

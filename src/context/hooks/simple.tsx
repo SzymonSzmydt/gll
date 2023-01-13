@@ -1,4 +1,4 @@
-export const minSort = (element: number[]): number[] =>
+export const numberSort = (element: number[]): number[] =>
   element.sort((a: any, b: any) => a - b);
 
 export const createDrawNumbers = (n: number[]): number[] =>

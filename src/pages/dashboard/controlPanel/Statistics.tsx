@@ -1,24 +1,19 @@
 import ctr from "./control.module.css";
 import { NumberOccurs } from "../../../components/ui/tables/NumberOccurs";
 import { DetailedInstances } from "../../../components/ui/popup/DetailedInstances";
-import { useState, SetStateAction, Dispatch } from "react";
+import { useState } from "react";
 import { howManyOccursVoid } from "../../../context/hooks/functions";
 
 type StatisticsProps = {
-  detailedData: howManyOccursVoid;
-  setDetailedData: Dispatch<SetStateAction<howManyOccursVoid>>;
   data50: howManyOccursVoid[];
   data12: howManyOccursVoid[];
   lengths: number;
 };
 
-export function Statistics({
-  detailedData,
-  setDetailedData,
-  data50,
-  data12,
-  lengths,
-}: StatisticsProps) {
+export function Statistics({ data50, data12, lengths }: StatisticsProps) {
+  const [detailedData, setDetailedData] = useState<howManyOccursVoid>(
+    {} as howManyOccursVoid
+  );
   const [isPopupVisible, setIsPopupVisible] = useState(false);
   const firstSectionOfData = data50.filter((e, i) => i < 14);
   const secondSectionOfData = data50.filter((e, i) => i >= 14 && i < 28);

@@ -1,7 +1,6 @@
 import { Window } from "../../../components/windows/Window";
 import { Nav } from "./nav/Nav";
 import { useSelector } from "react-redux";
-import { useState } from "react";
 import { RootState } from "../../../context/redux/Store";
 import { Statistics } from "./Statistics";
 import {
@@ -10,9 +9,6 @@ import {
 } from "../../../context/hooks/functions";
 
 export function ControlPanel() {
-  const [detailedData, setDetailedData] = useState<howManyOccursVoid>(
-    {} as howManyOccursVoid
-  );
   const db = useSelector((state: RootState) => state.database.value);
   const data50: howManyOccursVoid[] = sortedOccured(50, "normal1", db);
   const data12: howManyOccursVoid[] = sortedOccured(12, "normal2", db);
@@ -21,8 +17,6 @@ export function ControlPanel() {
     <Window shadow={true}>
       <Nav />
       <Statistics
-        detailedData={detailedData}
-        setDetailedData={setDetailedData}
         data50={data50}
         data12={data12}
         lengths={db?.length}
