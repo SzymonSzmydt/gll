@@ -1,13 +1,14 @@
 import nav from "./nav.module.css";
+import { BtnVariant } from "../../../../components/buttons/BtnVariant";
 
 export function Nav() {
   return (
     <nav className={nav.nav}>
-      <span className={nav.span}> CZĘSTOTLIWOŚĆ </span>
-      <span className={nav.span}> EMPTY </span>
-      <span className={nav.span}> EMPTY </span>
-      <span className={nav.span}> EMPTY </span>
-      <span className={nav.span}> EMPTY </span>
+      <BtnVariant name={"STATYSTYKA"} />
+      <BtnVariant name={"GENEROWANIE"} />
+      <BtnVariant name={"EMPTY"} />
+      <BtnVariant name={"EMPTY"} />
+      <BtnVariant name={"EMPTY"} />
     </nav>
   );
 }

@@ -24,16 +24,13 @@ export function DataBase() {
     }
   }, [dispatch]);
 
-  useEffect(() => {
-    uploadDataFromServer();
-  }, [uploadDataFromServer, dbAdd]);
-
   return (
     <Window shadow={true}>
       <BtnVariant
         name={dbAdd ? "BAZA RECORDÓW" : "DODAJ RECORD"}
         handleClick={() => setDbAdd(!dbAdd)}
       />
+      <BtnVariant name={"ODŚWIEŻ"} handleClick={uploadDataFromServer} />
       <section className={db.section}>
         {dbAdd ? <DbAddRecord /> : <DbView />}
       </section>
