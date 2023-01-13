@@ -82,7 +82,8 @@
 }
 
 .accent {
-  background-color: var(--bg-color-accent);
+  cursor: pointer;
+  background-color: var(--border-color-light);
 }
 
 .tdSpan {

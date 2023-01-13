@@ -1,5 +1,6 @@
 import dbStyles from "./record.module.css";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { RootState } from "../../../../context/redux/Store";
 import {
   updateLight1,
   updateLight2,
@@ -12,15 +13,28 @@ type DbTableRowProps = {
 };
 
 export function DbTableRow({ date, normal1, normal2 }: DbTableRowProps) {
+  const catched50 = useSelector((state: RootState) => state.light.normal1);
+  const isLight = "" + catched50 === "" + normal1;
   const dispatch = useDispatch();
   const handleClick = () => {
-    dispatch(updateLight1(normal1));
-    dispatch(updateLight2(normal2));
+    console.log("isLight: ", isLight);
+    if (!isLight) {
+      dispatch(updateLight1(normal1));
+      dispatch(updateLight2(normal2));
+    }
+    if (isLight) {
+      dispatch(updateLight1([]));
+      dispatch(updateLight2([]));
+    }
   };
+
   return (
     <table>
       <tfoot>
-        <tr className={dbStyles.nth} onClick={handleClick}>
+        <tr
+          className={isLight ? dbStyles.accent : dbStyles.nth}
+          onClick={handleClick}
+        >
           <td className={dbStyles.tdDate}> {date ?? null}</td>
           <td>
             {normal1
