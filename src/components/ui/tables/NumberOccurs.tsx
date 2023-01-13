@@ -1,15 +1,15 @@
 import table from "./tables.module.css";
-import { howManyOccursVoid } from "../../../context/hooks/functions";
 import { Dispatch, SetStateAction } from "react";
 import { useSelector } from "react-redux";
 import { RootState } from "../../../context/redux/Store";
+import { dataWithDraw } from "../../../context/redux/dbSlice";
 
 type Props = {
   type?: string;
-  data: howManyOccursVoid[];
+  data: dataWithDraw[];
   lengths: number;
   setIsPopupVisible: Dispatch<SetStateAction<boolean>>;
-  setDetailedData: Dispatch<SetStateAction<howManyOccursVoid>>;
+  setDetailedData: Dispatch<SetStateAction<dataWithDraw>>;
 };
 
 const isLight1 = (n: number, db: number[]) =>
@@ -30,7 +30,7 @@ export function NumberOccurs({
 
   const isLight = (n: number) =>
     type === "normal1" ? isLight1(n, lightBase1) : isLight2(n, lightBase2);
-  const handleClick = (item: howManyOccursVoid) => {
+  const handleClick = (item: dataWithDraw) => {
     setIsPopupVisible(true);
     setDetailedData(item);
   };

@@ -1,6 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
 import type { PayloadAction } from "@reduxjs/toolkit";
-import { howManyOccursVoid } from "../hooks/functions";
 
 export interface Db {
   id: number;
@@ -11,10 +10,17 @@ export interface Db {
   sort2: number[];
 }
 
+export type dataWithDraw = {
+  id: number[];
+  draw: number[];
+  num: number;
+  date: string[];
+};
+
 export interface DbState {
   value: Array<Db>;
-  data50: howManyOccursVoid[];
-  data12: howManyOccursVoid[];
+  data50: dataWithDraw[];
+  data12: dataWithDraw[];
 }
 
 const initialState: DbState = {
@@ -30,10 +36,10 @@ export const dbSlice = createSlice({
     updateDb: (state, action: PayloadAction<Array<Db>>) => {
       state.value = action.payload;
     },
-    updateDb50: (state, action: PayloadAction<Array<howManyOccursVoid>>) => {
+    updateDb50: (state, action: PayloadAction<Array<dataWithDraw>>) => {
       state.data50 = action.payload;
     },
-    updateDb12: (state, action: PayloadAction<Array<howManyOccursVoid>>) => {
+    updateDb12: (state, action: PayloadAction<Array<dataWithDraw>>) => {
       state.data12 = action.payload;
     },
   },

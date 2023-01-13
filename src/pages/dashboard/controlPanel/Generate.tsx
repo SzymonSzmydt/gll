@@ -1,11 +1,9 @@
-import { howManyOccursVoid } from "../../../context/hooks/functions";
+import { dataWithDraw } from "../../../context/redux/dbSlice";
 type GenerateProps = {
-  data50: howManyOccursVoid[];
+  data50: dataWithDraw[];
 };
 
 export function Generate({ data50 }: GenerateProps) {
-  const addingLastDrawToObject = () => {};
-
   return (
     <div>
       <section>

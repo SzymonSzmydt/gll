@@ -11,7 +11,6 @@ export function ControlPanel() {
   const db = useSelector((state: RootState) => state.database.value);
   const data50 = useSelector((state: RootState) => state.database.data50);
   const data12 = useSelector((state: RootState) => state.database.data12);
-
   return db.length > 0 ? (
     <Window shadow={true}>
       <Nav setNav={setNav} />
