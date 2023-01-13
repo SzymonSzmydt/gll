@@ -17,7 +17,6 @@ export function DbTableRow({ date, normal1, normal2 }: DbTableRowProps) {
   const isLight = "" + catched50 === "" + normal1;
   const dispatch = useDispatch();
   const handleClick = () => {
-    console.log("isLight: ", isLight);
     if (!isLight) {
       dispatch(updateLight1(normal1));
       dispatch(updateLight2(normal2));

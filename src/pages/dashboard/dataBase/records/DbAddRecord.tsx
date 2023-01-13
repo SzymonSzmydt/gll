@@ -6,10 +6,14 @@ import { doc, setDoc } from "firebase/firestore";
 import { dataBase } from "../../../../context/firebase/firebase";
 import { Window } from "../../../../components/windows/Window";
 import { arrayGenerator } from "../../../../context/hooks/functions";
+import { useSelector } from "react-redux";
+import { RootState } from "../../../../context/redux/Store";
 
 const green = (num: number, val: number) => (num === val ? db.green : "");
 
 export function DbAddRecord() {
+  const catche50 = useSelector((state: RootState) => state.light.normal1);
+  const idValue = useSelector((state: RootState) => state.database.value);
   const [ballNumber50, setBallNumber50] = useState<number[]>([]);
   const [ballNumber2, setBallNumber2] = useState<number[]>([]);
   const dateRef = useRef<HTMLInputElement | null>(null);
@@ -30,6 +34,7 @@ export function DbAddRecord() {
     const copy1 = ballNumber50.map((e) => e).sort((a, b) => a - b);
     const copy2 = ballNumber2.map((e) => e).sort((a, b) => a - b);
     if (
+      "" + catche50 !== "" + ballNumber50 &&
       ballNumber50.length === 5 &&
       ballNumber2.length === 2 &&
       dateRef.current?.value
@@ -38,6 +43,7 @@ export function DbAddRecord() {
         doc(dataBase, "jackpot", "db"),
         {
           [dateRef.current?.value]: {
+            id: idValue.length + 1,
             date: dateRef.current?.value,
             normal1: ballNumber50,
             normal2: ballNumber2,
@@ -75,19 +81,19 @@ export function DbAddRecord() {
       </Window>
       {arrayGenerator(50).map((num) => (
         <Ball key={num} handleClick={() => handleClick50(num, false)}>
-          {" "}
           {num}
         </Ball>
       ))}
       <hr />
       {arrayGenerator(12).map((num) => (
         <Ball key={num} handleClick={() => handleClick2(num, false)}>
-          {" "}
           {num}
         </Ball>
       ))}
       <input type="date" ref={dateRef} className={db.date} />
       <BtnVariant name="ZAPISZ" handleClick={saveNumbersToFirestore} />
+      <br />
+      <span></span>
     </>
   );
 }
