@@ -1,45 +1,43 @@
 .extra {
-    user-select: none;
-    padding: 0.25rem;
-    margin: 0.25rem;
-    border-radius: var(--radius);
+  user-select: none;
+  padding: 0.25rem;
+  margin: 0.25rem;
+  cursor: pointer;
 }
 
 .ball {
-    cursor: pointer;
-    display: inline-block;
-    width: 1.5rem;
-    height: 1.5rem;
-    composes: extra;
-    text-align: center;
-    border: 2px solid var(--border-color-light);
-    border-radius: 50%;
+  display: inline-block;
+  width: 1.5rem;
+  height: 1.5rem;
+  composes: extra;
+  text-align: center;
+  border: 2px solid var(--border-color-light);
+  border-radius: 50%;
 }
 
 .ball:hover {
-    background-color: var(--border-color);
+  background-color: var(--border-color);
 }
 
 .variant {
-    cursor: pointer;
-    width: 10rem;
-    composes: extra;
-    padding: 0.5rem;
-    font-weight: 600;
-    color: var(--font-dark);
-    background-color:var(--btn) ;
-    border: 2px solid var(--border-color-light);
-    box-shadow: 0px 0px 15px 1px var(--border-color-light); 
+  width: 10rem;
+  composes: extra;
+  font-weight: 500;
+  color: var(--font-dark);
+  background-color: var(--btn);
+  border: 2px solid var(--border-color-light);
+  border-radius: 5px;
+  box-shadow: 0px 0px 15px 1px var(--border-color-light);
 }
 
 .variant:hover {
-    background-color: var(--border-color);
+  background-color: var(--border-color);
 }
 
 .delete {
-    width: 0.75rem;
-    height: 1rem;;
-    background-image: url('../../assets/delete.png');
-    background-repeat: no-repeat;
-    background-size: cover;
+  width: 0.75rem;
+  height: 1rem;
+  background-image: url("../../assets/delete.png");
+  background-repeat: no-repeat;
+  background-size: cover;
 }

@@ -13,7 +13,10 @@ type Props = {
 };
 
 const isLight1 = (n: number, db: number[]) =>
-  db.includes(n) ? table.accent : table.tr;
+  db.includes(n) ? table.accent50 : table.tr;
+
+const isLight2 = (n: number, db: number[]) =>
+  db.includes(n) ? table.accent12 : table.tr;
 
 export function NumberOccurs({
   type,
@@ -26,13 +29,11 @@ export function NumberOccurs({
   const lightBase2 = useSelector((state: RootState) => state.light.normal2);
 
   const isLight = (n: number) =>
-    type === "normal1" ? isLight1(n, lightBase1) : isLight1(n, lightBase2);
+    type === "normal1" ? isLight1(n, lightBase1) : isLight2(n, lightBase2);
   const handleClick = (item: howManyOccursVoid) => {
     setIsPopupVisible(true);
     setDetailedData(item);
   };
-  console.log(data, lengths);
-
   return (
     <table className={table.table}>
       <thead>

@@ -14,7 +14,8 @@
 
   --red: #af0000;
   --off: #740303;
-  --color-accent: rgba(2, 178, 201, 0.37);
+  --color-accent1: rgba(2, 178, 201, 0.089);
+  --color-accent2: rgba(2, 201, 151, 0.151);
 
   --green: #5c9900;
 }

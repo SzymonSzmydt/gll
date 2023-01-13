@@ -81,6 +81,10 @@
   background-color: var(--bg-shadow);
 }
 
+.accent {
+  background-color: var(--bg-color-accent);
+}
+
 .tdSpan {
   display: inline-block;
   width: 2rem;

@@ -12,12 +12,18 @@
   background-color: var(--border-color);
 }
 
-.accent {
+.accent50 {
   cursor: pointer;
-  background-color: var(--color-accent);
+  background-color: var(--color-accent1);
 }
 
-.accent:hover {
+.accent12 {
+  cursor: pointer;
+  background-color: var(--color-accent2);
+}
+
+.accent50:hover,
+.accent12:hover {
   background-color: var(--border-color);
 }
 
