@@ -11,6 +11,7 @@
 }
 
 .windowWithClose {
+  z-index: 1;
   composes: window shadow;
   text-align: right;
   position: absolute;

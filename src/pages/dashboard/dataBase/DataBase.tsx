@@ -10,6 +10,7 @@ import {
   updateDb,
   updateDb50,
   updateDb12,
+  updateDbKeys,
 } from "../../../context/redux/dbSlice";
 import { dataBase } from "../../../context/firebase/firebase";
 import { sortedOccured } from "../../../context/hooks/functions";
@@ -28,6 +29,7 @@ export function DataBase() {
       const data50 = addDrawProperties(sortedOccured(50, "normal1", db));
       const data12 = addDrawProperties(sortedOccured(12, "normal2", db));
       dispatch(updateDb(db));
+      dispatch(updateDbKeys(Object.keys(docSnap.data())));
       dispatch(updateDb50(data50));
       dispatch(updateDb12(data12));
     } else {

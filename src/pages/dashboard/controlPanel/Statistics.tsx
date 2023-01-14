@@ -2,17 +2,17 @@ import ctr from "./control.module.css";
 import { NumberOccurs } from "../../../components/ui/tables/NumberOccurs";
 import { DetailedInstances } from "../../../components/ui/popup/DetailedInstances";
 import { useState } from "react";
-import { dataWithDraw } from "../../../context/redux/dbSlice";
+import { DataWithDraw } from "../../../context/redux/dbSlice";
 
 type StatisticsProps = {
-  data50: dataWithDraw[];
-  data12: dataWithDraw[];
+  data50: DataWithDraw[];
+  data12: DataWithDraw[];
   lengths: number;
 };
 
 export function Statistics({ data50, data12, lengths }: StatisticsProps) {
-  const [detailedData, setDetailedData] = useState<dataWithDraw>(
-    {} as dataWithDraw
+  const [detailedData, setDetailedData] = useState<DataWithDraw>(
+    {} as DataWithDraw
   );
   const [isPopupVisible, setIsPopupVisible] = useState(false);
   const firstSectionOfData = data50.filter((e, i) => i < 14);

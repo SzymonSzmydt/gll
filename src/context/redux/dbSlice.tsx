@@ -10,7 +10,7 @@ export interface Db {
   sort2: number[];
 }
 
-export type dataWithDraw = {
+export type DataWithDraw = {
   id: number[];
   draw: number[];
   num: number;
@@ -19,12 +19,14 @@ export type dataWithDraw = {
 
 export interface DbState {
   value: Array<Db>;
-  data50: dataWithDraw[];
-  data12: dataWithDraw[];
+  keys: string[];
+  data50: DataWithDraw[];
+  data12: DataWithDraw[];
 }
 
 const initialState: DbState = {
   value: [],
+  keys: [],
   data50: [],
   data12: [],
 };
@@ -36,14 +38,18 @@ export const dbSlice = createSlice({
     updateDb: (state, action: PayloadAction<Array<Db>>) => {
       state.value = action.payload;
     },
-    updateDb50: (state, action: PayloadAction<Array<dataWithDraw>>) => {
+    updateDbKeys: (state, action: PayloadAction<string[]>) => {
+      state.keys = action.payload.sort();
+    },
+    updateDb50: (state, action: PayloadAction<Array<DataWithDraw>>) => {
       state.data50 = action.payload;
     },
-    updateDb12: (state, action: PayloadAction<Array<dataWithDraw>>) => {
+    updateDb12: (state, action: PayloadAction<Array<DataWithDraw>>) => {
       state.data12 = action.payload;
     },
   },
 });
 
-export const { updateDb, updateDb50, updateDb12 } = dbSlice.actions;
+export const { updateDb, updateDb50, updateDb12, updateDbKeys } =
+  dbSlice.actions;
 export default dbSlice.reducer;
