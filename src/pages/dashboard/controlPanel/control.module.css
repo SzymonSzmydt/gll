@@ -2,3 +2,12 @@
   display: flex;
   flex-wrap: wrap;
 }
+
+.position {
+  position: relative;
+}
+
+.small {
+  font-size: 0.75rem;
+  color: var(--font-dark);
+}
