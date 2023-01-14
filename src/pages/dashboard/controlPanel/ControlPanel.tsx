@@ -17,7 +17,7 @@ export function ControlPanel() {
       {nav === "statistics" ? (
         <Statistics data50={data50} data12={data12} lengths={db?.length} />
       ) : (
-        <Generate data50={data50} />
+        <Generate />
       )}
     </Window>
   ) : null;
