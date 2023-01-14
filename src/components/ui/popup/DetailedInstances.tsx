@@ -31,7 +31,7 @@ export function DetailedInstances({ handleClose, data }: DetailedProps) {
           data={Array(...data.date).sort()}
           name={"Data"}
         />
-        <SingleTable name={"Wystąpienie"} data={[0].concat(data.draw)} />
+        <SingleTable name={"Wystąpienie"} data={data.draw} />
       </section>
     </WindowWithCloseBtn>
   );

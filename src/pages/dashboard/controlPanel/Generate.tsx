@@ -20,30 +20,34 @@ export function Generate() {
   };
 
   return (
-    <div>
+    <>
       <section className={ctr.positon}>
         <p> Liczby, które najrzadziej wypadły</p>
         <Window>
           <span className={ctr.small}> Losowanie standardowe 1 z 50 </span>
-          <hr />
-          {data50.map((e) =>
-            keys.at(-1) !== e.date.at(-1) && e.draw[e.draw.length - 1] >= 17 ? (
-              <Ball key={e.num} handleClick={() => handleClick(e)}>
-                {e.num}{" "}
-              </Ball>
-            ) : null
-          )}
+          <div className={ctr.black}>
+            {data50.map((e) =>
+              e.draw[e.draw.length - 1] >= 15 &&
+              !e.date.includes(keys[keys.length - 1]) ? (
+                <Ball key={e.num} handleClick={() => handleClick(e)}>
+                  {e.num}{" "}
+                </Ball>
+              ) : null
+            )}
+          </div>
         </Window>
         <Window>
           <span className={ctr.small}> Losowanie dodatkowe 1 z 12 </span>
-          <hr />
-          {data12.map((e) =>
-            e.draw[e.draw.length - 1] >= 15 ? (
-              <Ball key={e.num} handleClick={() => handleClick(e)}>
-                {e.num}{" "}
-              </Ball>
-            ) : null
-          )}
+          <div className={ctr.black}>
+            {data12.map((e) =>
+              !e.date.includes(keys[keys.length - 1]) &&
+              e.draw[e.draw.length - 1] >= 8 ? (
+                <Ball key={e.num} handleClick={() => handleClick(e)}>
+                  {e.num}{" "}
+                </Ball>
+              ) : null
+            )}
+          </div>
         </Window>
         {isVisible ? (
           <DetailedInstances
@@ -52,6 +56,6 @@ export function Generate() {
           />
         ) : null}
       </section>
-    </div>
+    </>
   );
 }

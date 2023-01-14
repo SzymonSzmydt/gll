@@ -3,6 +3,7 @@ import { NumberOccurs } from "../../../components/ui/tables/NumberOccurs";
 import { DetailedInstances } from "../../../components/ui/popup/DetailedInstances";
 import { useState } from "react";
 import { DataWithDraw } from "../../../context/redux/dbSlice";
+import { Window } from "../../../components/windows/Window";
 
 type StatisticsProps = {
   data50: DataWithDraw[];
@@ -51,13 +52,16 @@ export function Statistics({ data50, data12, lengths }: StatisticsProps) {
           data={fourSectionOfData}
           lengths={lengths}
         />
-        <NumberOccurs
-          type="normal2"
-          setIsPopupVisible={setIsPopupVisible}
-          setDetailedData={setDetailedData}
-          data={data12}
-          lengths={lengths}
-        />
+        <Window>
+          Wystąpienia liczb 1 z 12
+          <NumberOccurs
+            type="normal2"
+            setIsPopupVisible={setIsPopupVisible}
+            setDetailedData={setDetailedData}
+            data={data12}
+            lengths={lengths}
+          />
+        </Window>
       </div>
       {isPopupVisible && detailedData ? (
         <DetailedInstances
