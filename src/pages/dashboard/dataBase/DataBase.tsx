@@ -14,7 +14,10 @@ import {
 } from "../../../context/redux/dbSlice";
 import { dataBase } from "../../../context/firebase/firebase";
 import { sortedOccured } from "../../../context/hooks/functions";
-import { addDrawProperties } from "../../../context/hooks/simple";
+import {
+  addDrawProperties,
+  addLastDrawPropperties,
+} from "../../../context/hooks/simple";
 
 export function DataBase() {
   const [dbAdd, setDbAdd] = useState(false);
@@ -26,8 +29,14 @@ export function DataBase() {
 
     if (docSnap.exists()) {
       const db = Object.values(docSnap.data());
-      const data50 = addDrawProperties(sortedOccured(50, "normal1", db));
-      const data12 = addDrawProperties(sortedOccured(12, "normal2", db));
+      const data50 = addLastDrawPropperties(
+        addDrawProperties(sortedOccured(50, "normal1", db)),
+        db.length
+      );
+      const data12 = addLastDrawPropperties(
+        addDrawProperties(sortedOccured(12, "normal2", db)),
+        db.length
+      );
       dispatch(updateDb(db));
       dispatch(updateDbKeys(Object.keys(docSnap.data())));
       dispatch(updateDb50(data50));

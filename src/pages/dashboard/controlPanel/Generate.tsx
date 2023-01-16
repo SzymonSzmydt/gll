@@ -6,7 +6,6 @@ import { Window } from "../../../components/windows/Window";
 import { useState } from "react";
 import { DetailedInstances } from "../../../components/ui/popup/DetailedInstances";
 import { DataWithDraw } from "../../../context/redux/dbSlice";
-import { addLastDrawPropperties } from "../../../context/hooks/simple";
 
 export function Generate() {
   const [isVisible, setIsVisible] = useState(false);
@@ -18,9 +17,6 @@ export function Generate() {
   const data12 = useSelector((state: RootState) => state.database.data12);
   const rangeSize50: number = +(keys.length / 4).toFixed();
   const rangeSize12: number = +(keys.length / 10).toFixed();
-
-  const precisionDrawProoperty50 = addLastDrawPropperties(data50, keys.length);
-  const precisionDrawProoperty12 = addLastDrawPropperties(data12, keys.length);
 
   const handleClick = (item: DataWithDraw) => {
     setIsVisible(true);
@@ -44,7 +40,7 @@ export function Generate() {
             }
           />
           <div className={ctr.black}>
-            {precisionDrawProoperty50.map((e) =>
+            {data50.map((e) =>
               e.draw[e.draw.length - 1] >= rangeValue50 ? (
                 <Ball key={e.num} handleClick={() => handleClick(e)}>
                   {e.num}
@@ -66,7 +62,7 @@ export function Generate() {
             }
           />
           <div className={ctr.black}>
-            {precisionDrawProoperty12.map((e) =>
+            {data12.map((e) =>
               e.draw[e.draw.length - 1] >= rangeValue12 &&
               !e.date.includes(keys[keys.length - 1]) ? (
                 <Ball key={e.num} handleClick={() => handleClick(e)}>
