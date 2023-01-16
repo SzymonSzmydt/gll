@@ -21,7 +21,7 @@ export function howManyOccured(
   return {
     id: countOccures.map((e: any) => e.id).sort(),
     num: countOccures.map((e: any) => e.num)[0],
-    date: countOccures.map((e: any) => e.date),
+    date: countOccures.map((e: any) => e.date).sort(),
   };
 }
 

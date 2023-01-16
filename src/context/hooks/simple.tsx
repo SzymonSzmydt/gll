@@ -1,3 +1,4 @@
+import { DataWithDraw } from "../redux/dbSlice";
 export const numberSort = (element: any[]): number[] =>
   element.sort((a: any, b: any) => a - b);
 
@@ -11,4 +12,20 @@ export const addDrawProperties = (item: any[]) => {
     key.draw = createDrawNumbers(numberSort(key.id));
   }
   return item;
+};
+
+export const addLastDrawPropperties = (
+  item: DataWithDraw[],
+  n: number
+): DataWithDraw[] => {
+  const keysCopy = structuredClone(item);
+  for (let key of keysCopy) {
+    if (key.id.at(-1) === n) {
+      key.draw = [0].concat(key.draw);
+    } else {
+      const x = n - key.id.at(-1);
+      key.draw = key.draw.concat([x]);
+    }
+  }
+  return keysCopy;
 };
