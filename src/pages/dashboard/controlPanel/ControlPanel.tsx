@@ -16,9 +16,9 @@ export function ControlPanel() {
       <Nav setNav={setNav} />
       {nav === "statistics" ? (
         <Statistics data50={data50} data12={data12} lengths={db?.length} />
-      ) : (
+      ) : nav === "generate" ? (
         <Generate />
-      )}
+      ) : null}
     </Window>
   ) : null;
 }

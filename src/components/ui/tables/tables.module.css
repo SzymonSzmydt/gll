@@ -10,6 +10,8 @@
   width: 1.25rem;
   height: 1.25rem;
   font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--font);
   border: 2px solid var(--border-color-light);
   border-radius: 50%;
 }
@@ -76,6 +78,7 @@
 }
 
 .row {
+  width: 5rem;
   padding: 0 0.5rem;
   text-align: center;
   font-size: 0.85rem;

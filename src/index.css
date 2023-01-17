@@ -17,9 +17,9 @@
   --color-accent1: rgba(2, 178, 201, 0.336);
   --color-accent2: rgba(2, 201, 151, 0.349);
 
-  --green: #5c9900;
+  --green: #77c404;
 
-  --white: #fff;
+  --light: rgb(73, 255, 240);
 }
 
 body {
