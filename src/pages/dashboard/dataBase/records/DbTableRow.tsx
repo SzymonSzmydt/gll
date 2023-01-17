@@ -4,6 +4,7 @@ import { RootState } from "../../../../context/redux/Store";
 import {
   updateLight1,
   updateLight2,
+  updateLightDate,
 } from "../../../../context/redux/numbersLight";
 
 type DbTableRowProps = {
@@ -20,6 +21,7 @@ export function DbTableRow({ date, normal1, normal2 }: DbTableRowProps) {
     if (!isLight) {
       dispatch(updateLight1(normal1));
       dispatch(updateLight2(normal2));
+      dispatch(updateLightDate(date));
     }
     if (isLight) {
       dispatch(updateLight1([]));

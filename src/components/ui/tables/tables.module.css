@@ -25,6 +25,10 @@
   background-color: var(--border-color);
 }
 
+.accent {
+  background-color: var(--color-accent2);
+}
+
 .accent50 {
   cursor: pointer;
   background-color: var(--color-accent1);
