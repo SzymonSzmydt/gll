@@ -14,3 +14,9 @@
   font-weight: 500;
   color: var(--green);
 }
+
+.chart {
+  color: var(--bg-color);
+  width: 40rem;
+  height: 16.25rem;
+}
