@@ -51,7 +51,9 @@ export function NumberOccurs({
                 className={isLight(e.num)}
                 onClick={() => handleClick(e)}
               >
-                <td className={table.td}> {e.num} </td>
+                <td className={table.td}>
+                  <div className={table.ball}> {e.num} </div>
+                </td>
                 <td className={table.td}> {e["date"].length} </td>
                 <td className={table.td}>
                   {`${((e["date"].length / lengths) * 100).toFixed()} %`}

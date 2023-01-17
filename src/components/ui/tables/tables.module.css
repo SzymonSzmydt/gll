@@ -3,6 +3,17 @@
   margin: 0.5rem;
 }
 
+.ball {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 1.25rem;
+  height: 1.25rem;
+  font-size: 0.75rem;
+  border: 2px solid var(--border-color-light);
+  border-radius: 50%;
+}
+
 .tr {
   cursor: pointer;
   background-color: var(--bg-shadow-dark);
