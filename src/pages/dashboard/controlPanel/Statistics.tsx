@@ -16,10 +16,10 @@ export function Statistics({ data50, data12, lengths }: StatisticsProps) {
     {} as DataWithDraw
   );
   const [isPopupVisible, setIsPopupVisible] = useState(false);
-  const firstSectionOfData = data50.filter((e, i) => i < 14);
-  const secondSectionOfData = data50.filter((e, i) => i >= 14 && i < 28);
-  const thirdSectionOfData = data50.filter((e, i) => i >= 28 && i < 42);
-  const fourSectionOfData = data50.filter((e, i) => i >= 42);
+  const firstSectionOfData = data50.filter((e, i) => i < 13);
+  const secondSectionOfData = data50.filter((e, i) => i >= 13 && i < 26);
+  const thirdSectionOfData = data50.filter((e, i) => i >= 26 && i < 39);
+  const fourSectionOfData = data50.filter((e, i) => i >= 39);
 
   return (
     <>
@@ -53,7 +53,7 @@ export function Statistics({ data50, data12, lengths }: StatisticsProps) {
           lengths={lengths}
         />
         <Window>
-          Wystąpienia liczb 1 z 12
+          <div className={ctr.center}> Wystąpienia liczb 1 z 12 </div>
           <NumberOccurs
             type="normal2"
             setIsPopupVisible={setIsPopupVisible}

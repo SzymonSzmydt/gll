@@ -7,6 +7,11 @@
   position: relative;
 }
 
+.center {
+  width: 100%;
+  text-align: center;
+}
+
 .small {
   font-size: 0.75rem;
   color: var(--font-dark);
