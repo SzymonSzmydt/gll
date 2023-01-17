@@ -18,6 +18,11 @@ type DetailedProps = {
 export function DetailedInstances({ handleClose, data }: DetailedProps) {
   const sortedId = numberSort(Array(...data.id));
 
+  const lineChartData = {
+    id: `Liczba ${data.num}`,
+    data: data.draw.map((e, i) => ({ x: data["id"][i], y: e })),
+  };
+
   return (
     <WindowWithCloseBtn handleClose={handleClose}>
       <div className={popup.flex}>
@@ -26,19 +31,14 @@ export function DetailedInstances({ handleClose, data }: DetailedProps) {
             Liczba <Ball> {data.num} </Ball> wystąpiła&nbsp;
             <span className={popup.accent}>{data.date.length}</span> razy.
           </div>
-          <section className={popup.flex}>
-            <SingleTable data={sortedId} name={"Losowanie"} />
-            <SingleTable
-              id={data.id}
-              num={data.num}
-              data={Array(...data.date).sort()}
-              name={"Data"}
-            />
+          <div className={popup.flex}>
+            <SingleTable name={"Losowanie"} data={sortedId} />
+            <SingleTable name={"Data"} data={Array(...data.date).sort()} />
             <SingleTable name={"Wystąpienie"} data={data.draw} />
-          </section>
+          </div>
         </section>
         <section className={popup.chart}>
-          <Line />
+          <Line data={lineChartData} />
         </section>
       </div>
     </WindowWithCloseBtn>

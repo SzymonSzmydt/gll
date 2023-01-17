@@ -1,81 +1,11 @@
 import { ResponsiveLine } from "@nivo/line";
+import { theme } from "./Theme";
 
-const data = [
-  {
-    id: "japan",
-    data: [
-      {
-        x: "plane",
-        y: 194,
-      },
-      {
-        x: "helicopter",
-        y: 89,
-      },
-      {
-        x: "boat",
-        y: 99,
-      },
-      {
-        x: "train",
-        y: 138,
-      },
-      {
-        x: "subway",
-        y: 265,
-      },
-      {
-        x: "bus",
-        y: 158,
-      },
-      {
-        x: "car",
-        y: 60,
-      },
-    ],
-  },
-];
-
-export function Line() {
-  const theme = {
-    background: "var(--bg-shadow-dark)",
-    textColor: "var(--font)",
-    fontSize: 11,
-    axis: {
-      domain: {
-        line: {
-          stroke: "var(--border-color)",
-          strokeWidth: 1,
-        },
-      },
-      legend: {
-        text: {
-          fontSize: 13,
-          fill: "var(--font)",
-        },
-      },
-      ticks: {
-        line: {
-          stroke: "var(--border-color)",
-          strokeWidth: 1,
-        },
-        text: {
-          fontSize: 11,
-          fill: "var(--font-dark)",
-        },
-      },
-    },
-    grid: {
-      line: {
-        stroke: "var(--border-color)",
-        strokeWidth: 1,
-      },
-    },
-  };
+export function Line({ data }: any) {
   return (
     <ResponsiveLine
       theme={theme}
-      data={data}
+      data={Array(data)}
       margin={{ top: 50, right: 110, bottom: 50, left: 60 }}
       xScale={{ type: "point" }}
       yScale={{
@@ -104,7 +34,6 @@ export function Line() {
         legendOffset: -40,
         legendPosition: "middle",
       }}
-      colors={{ scheme: "purple_blue" }}
       pointSize={10}
       pointColor={{ theme: "background" }}
       pointBorderWidth={2}
