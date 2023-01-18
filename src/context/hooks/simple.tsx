@@ -21,7 +21,7 @@ export const addLastDrawPropperties = (
   const keysCopy = structuredClone(item);
   for (let key of keysCopy) {
     if (key.id.at(-1) === n) {
-      key.draw = [0].concat(key.draw);
+      key.draw = key.draw.concat([0]);
     } else {
       const x = n - key.id.at(-1);
       key.draw = key.draw.concat([x]);
