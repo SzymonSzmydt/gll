@@ -8,12 +8,12 @@ export function Dashboard() {
     <main className={dash.main}>
       <section>
         <DataBase />
-        <Window shadow={true}>
-          <Generate />
-        </Window>
       </section>
       <section>
         <ControlPanel />
+        <Window shadow={true}>
+          <Generate />
+        </Window>
       </section>
     </main>
   );

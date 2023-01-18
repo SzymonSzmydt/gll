@@ -76,6 +76,7 @@ export function Generate() {
           <DetailedInstances
             data={data}
             handleClose={() => setIsVisible(false)}
+            db={data50}
           />
         ) : null}
       </section>

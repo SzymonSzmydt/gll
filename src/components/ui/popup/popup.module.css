@@ -20,3 +20,8 @@
   width: 40rem;
   height: 16.25rem;
 }
+
+.small {
+  justify-self: flex-start;
+  font-size: 0.75rem;
+}

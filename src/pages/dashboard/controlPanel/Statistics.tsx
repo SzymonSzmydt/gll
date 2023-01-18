@@ -67,6 +67,7 @@ export function Statistics({ data50, data12, lengths }: StatisticsProps) {
         <DetailedInstances
           handleClose={() => setIsPopupVisible(false)}
           data={detailedData}
+          db={data50}
         />
       ) : null}
     </>

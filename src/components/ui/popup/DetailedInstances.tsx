@@ -4,6 +4,7 @@ import popup from "./popup.module.css";
 import { SingleTable } from "../tables/SingleTable";
 import { numberSort } from "../../../context/hooks/simple";
 import { Line } from "../../charts/Line";
+import { DataWithDraw } from "../../../context/redux/dbSlice";
 
 type Data = {
   id: number[];
@@ -14,8 +15,9 @@ type Data = {
 type DetailedProps = {
   data: Data;
   handleClose: () => void;
+  db: DataWithDraw[];
 };
-export function DetailedInstances({ handleClose, data }: DetailedProps) {
+export function DetailedInstances({ handleClose, data, db }: DetailedProps) {
   const sortedId = numberSort(Array(...data.id));
 
   const lineChartData = {
@@ -30,6 +32,16 @@ export function DetailedInstances({ handleClose, data }: DetailedProps) {
           <div className={popup.p}>
             Liczba <Ball> {data.num} </Ball> wystąpiła&nbsp;
             <span className={popup.accent}>{data.date.length}</span> razy.
+            <br />
+            <span className={popup.small}>
+              Miejsce: &nbsp;
+              <span className={popup.accent}>
+                {db
+                  .map((e, i) => (e.num === data.num ? i + 1 : "X"))
+                  .filter((e) => e !== "X")}
+                /50
+              </span>
+            </span>
           </div>
           <div className={popup.flex}>
             <SingleTable name={"Losowanie"} data={sortedId} />
