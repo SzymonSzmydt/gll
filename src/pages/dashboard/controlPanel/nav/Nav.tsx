@@ -6,13 +6,15 @@ type NavProps = {
   setNav: Dispatch<SetStateAction<string>>;
 };
 type StateProps = {
-  stat?: boolean;
-  gen?: boolean;
+  stat: boolean;
+  gen: boolean;
+  pair: boolean;
 };
 export function Nav({ setNav }: NavProps) {
   const [isActive, setIsActive] = useState<StateProps>({
     stat: true,
     gen: false,
+    pair: false,
   });
 
   const handleClick = (props: StateProps, name: string) => {
@@ -24,16 +26,24 @@ export function Nav({ setNav }: NavProps) {
       <BtnVariant
         name={"STATYSTYKA"}
         handleClick={() =>
-          handleClick({ stat: true, gen: false }, "statistics")
+          handleClick({ stat: true, gen: false, pair: false }, "statistics")
         }
         isActive={isActive.stat}
       />
       <BtnVariant
         name={"GENEROWANIE"}
-        handleClick={() => handleClick({ stat: false, gen: true }, "generate")}
+        handleClick={() =>
+          handleClick({ stat: false, gen: true, pair: false }, "generate")
+        }
         isActive={isActive.gen}
       />
-      <BtnVariant name={"EMPTY"} />
+      <BtnVariant
+        name={"PAIRS"}
+        handleClick={() =>
+          handleClick({ stat: false, gen: false, pair: true }, "pairs")
+        }
+        isActive={isActive.gen}
+      />
       <BtnVariant name={"EMPTY"} />
       <BtnVariant name={"EMPTY"} />
     </nav>
