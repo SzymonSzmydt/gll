@@ -48,7 +48,14 @@ export function DbView({ isSorted }: DbViewProps) {
           </tr>
         </tbody>
       </table>
-      <span className={dbStyles.info}>Ilość recordów: {db.length ?? null}</span>
+      <section className={dbStyles.infoBox}>
+        <span className={dbStyles.info}>
+          Ilość recordów: <strong> {db.length ?? null} </strong>
+        </span>
+        <span className={dbStyles.info}>
+          Sortowanie: <strong> {isSorted ? "rosnąco" : "standard"} </strong>
+        </span>
+      </section>
     </>
   );
 }

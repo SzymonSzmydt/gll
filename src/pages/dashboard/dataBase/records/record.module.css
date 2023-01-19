@@ -103,6 +103,11 @@
   color: var(--green);
 }
 
+.infoBox {
+  display: flex;
+  justify-content: space-between;
+}
+
 .info {
   font-size: 0.75rem;
 }
