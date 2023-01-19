@@ -5,6 +5,7 @@ import { RootState } from "../../../context/redux/Store";
 import { DataWithDraw } from "../../../context/redux/dbSlice";
 
 type Props = {
+  lp: number;
   type?: string;
   data: DataWithDraw[];
   lengths: number;
@@ -19,6 +20,7 @@ const isLight2 = (n: number, db: number[]) =>
   db.includes(n) ? table.accent12 : table.tr;
 
 export function NumberOccurs({
+  lp,
   type,
   data,
   lengths,
@@ -38,7 +40,8 @@ export function NumberOccurs({
     <table className={table.table}>
       <thead>
         <tr>
-          <td className={table.tdHead}> Liczba </td>
+          <td className={table.tdHead}> Lp </td>
+          <td className={table.tdHead}> nr </td>
           <td className={table.tdHead}> Wystąpienia </td>
           <td className={table.tdHead}> Oscylacja </td>
         </tr>
@@ -51,6 +54,7 @@ export function NumberOccurs({
                 className={isLight(e.num)}
                 onClick={() => handleClick(e)}
               >
+                <td className={table.lp}> {lp + i} </td>
                 <td className={table.td}>
                   <div className={table.ball}> {e.num} </div>
                 </td>

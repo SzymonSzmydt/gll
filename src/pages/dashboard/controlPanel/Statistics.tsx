@@ -25,6 +25,7 @@ export function Statistics({ data50, data12, lengths }: StatisticsProps) {
     <>
       <div className={ctr.flex}>
         <NumberOccurs
+          lp={1}
           type="normal1"
           setIsPopupVisible={setIsPopupVisible}
           setDetailedData={setDetailedData}
@@ -32,6 +33,7 @@ export function Statistics({ data50, data12, lengths }: StatisticsProps) {
           lengths={lengths}
         />
         <NumberOccurs
+          lp={14}
           type="normal1"
           setIsPopupVisible={setIsPopupVisible}
           setDetailedData={setDetailedData}
@@ -39,6 +41,7 @@ export function Statistics({ data50, data12, lengths }: StatisticsProps) {
           lengths={lengths}
         />
         <NumberOccurs
+          lp={27}
           type="normal1"
           setIsPopupVisible={setIsPopupVisible}
           setDetailedData={setDetailedData}
@@ -46,6 +49,7 @@ export function Statistics({ data50, data12, lengths }: StatisticsProps) {
           lengths={lengths}
         />
         <NumberOccurs
+          lp={40}
           type="normal1"
           setIsPopupVisible={setIsPopupVisible}
           setDetailedData={setDetailedData}
@@ -55,6 +59,7 @@ export function Statistics({ data50, data12, lengths }: StatisticsProps) {
         <Window>
           <div className={ctr.center}> Wystąpienia liczb 1 z 12 </div>
           <NumberOccurs
+            lp={1}
             type="normal2"
             setIsPopupVisible={setIsPopupVisible}
             setDetailedData={setDetailedData}

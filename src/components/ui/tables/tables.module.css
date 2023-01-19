@@ -9,6 +9,7 @@
   align-items: center;
   width: 1.25rem;
   height: 1.25rem;
+  margin: 0 auto;
   font-size: 0.75rem;
   font-weight: 500;
   color: var(--font);
@@ -45,10 +46,10 @@
 }
 
 .tdHead {
-  background-color: var(--bg-shadow-dark);
-  text-align: right;
+  background-color: var(--bg-shadow);
+  text-align: center;
   padding: 0.35rem 0.5rem;
-  font-size: 0.95rem;
+  font-size: 0.8rem;
 }
 
 .tdHead:first-child {
@@ -60,9 +61,15 @@
 }
 
 .td {
-  text-align: right;
+  text-align: center;
   padding: 0.25rem 0.5rem;
   font-size: 0.85rem;
+}
+
+.lp {
+  text-align: center;
+  font-size: 0.7rem;
+  color: var(--font-dark);
 }
 
 .td:first-child {
