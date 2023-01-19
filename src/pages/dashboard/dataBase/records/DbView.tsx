@@ -3,7 +3,11 @@ import type { RootState } from "../../../../context/redux/Store";
 import { useSelector } from "react-redux";
 import { DbTableRow } from "./DbTableRow";
 
-export function DbView() {
+type DbViewProps = {
+  isSorted: boolean;
+};
+
+export function DbView({ isSorted }: DbViewProps) {
   const db: any[] = Object.values(
     useSelector((state: RootState) => state.database.value)
   );
@@ -35,7 +39,9 @@ export function DbView() {
                             .filter((e: string) => e !== "-")
                             .join("")
                       )
-                      .map((e) => <DbTableRow key={e.date} {...e} />)
+                      .map((e) => (
+                        <DbTableRow key={e.date} isSorted={isSorted} {...e} />
+                      ))
                   : null}
               </div>
             </td>

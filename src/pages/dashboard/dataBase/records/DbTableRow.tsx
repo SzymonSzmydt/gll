@@ -11,11 +11,21 @@ type DbTableRowProps = {
   date: string;
   normal1: Array<number>;
   normal2: Array<number>;
+  sort1: Array<number>;
+  sort2: Array<number>;
+  isSorted: boolean;
 };
 
-export function DbTableRow({ date, normal1, normal2 }: DbTableRowProps) {
-  const catched50 = useSelector((state: RootState) => state.light.normal1);
-  const isLight = "" + catched50 === "" + normal1;
+export function DbTableRow({
+  date,
+  isSorted,
+  normal1,
+  normal2,
+  sort1,
+  sort2,
+}: DbTableRowProps) {
+  const lightCatched50 = useSelector((state: RootState) => state.light.normal1);
+  const isLight = "" + lightCatched50 === "" + normal1;
   const dispatch = useDispatch();
   const handleClick = () => {
     if (!isLight) {
@@ -29,6 +39,9 @@ export function DbTableRow({ date, normal1, normal2 }: DbTableRowProps) {
     }
   };
 
+  const data50: number[] = isSorted ? sort1 : normal1;
+  const data12: number[] = isSorted ? sort2 : normal2;
+
   return (
     <table>
       <tfoot>
@@ -39,7 +52,7 @@ export function DbTableRow({ date, normal1, normal2 }: DbTableRowProps) {
           <td className={dbStyles.tdDate}> {date ?? null}</td>
           <td>
             {normal1
-              ? normal1.map((e) => (
+              ? data50.map((e) => (
                   <div key={e} className={dbStyles.tdSpan}>
                     {e}
                   </div>
@@ -48,7 +61,7 @@ export function DbTableRow({ date, normal1, normal2 }: DbTableRowProps) {
           </td>
           <td>
             {normal2
-              ? normal2.map((e) => (
+              ? data12.map((e) => (
                   <div
                     key={e}
                     className={`${dbStyles.tdSpan} + ${dbStyles.fontDark}`}

@@ -21,6 +21,7 @@ import {
 
 export function DataBase() {
   const [dbAdd, setDbAdd] = useState(false);
+  const [isSorted, setIsSorted] = useState(false);
   const dispatch = useDispatch();
 
   const uploadDataFromServer = async () => {
@@ -58,10 +59,11 @@ export function DataBase() {
           src={require("../../../assets/sort.png")}
           alt="sortuj"
           className={db.img}
+          onClick={() => setIsSorted(!isSorted)}
         />
       </div>
       <section className={db.section}>
-        {dbAdd ? <DbAddRecord /> : <DbView />}
+        {dbAdd ? <DbAddRecord /> : <DbView isSorted={isSorted} />}
       </section>
     </Window>
   );
