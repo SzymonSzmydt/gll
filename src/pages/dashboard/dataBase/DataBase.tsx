@@ -48,11 +48,18 @@ export function DataBase() {
 
   return (
     <Window shadow={true}>
-      <BtnVariant
-        name={dbAdd ? "BAZA RECORDÓW" : "DODAJ RECORD"}
-        handleClick={() => setDbAdd(!dbAdd)}
-      />
-      <BtnVariant name={"ODŚWIEŻ"} handleClick={uploadDataFromServer} />
+      <div className={db.box}>
+        <BtnVariant
+          name={dbAdd ? "BAZA RECORDÓW" : "DODAJ RECORD"}
+          handleClick={() => setDbAdd(!dbAdd)}
+        />
+        <BtnVariant name={"ODŚWIEŻ"} handleClick={uploadDataFromServer} />
+        <img
+          src={require("../../../assets/sort.png")}
+          alt="sortuj"
+          className={db.img}
+        />
+      </div>
       <section className={db.section}>
         {dbAdd ? <DbAddRecord /> : <DbView />}
       </section>

@@ -1,8 +1,26 @@
 .section {
-    width: 27.5rem;
-    overflow: auto;
-    height: auto;
-    padding: 0.5rem;
-    background-image: var(--bg-color-accent);
-    border-radius: var(--radius);
+  width: 27.5rem;
+  overflow: auto;
+  height: auto;
+  padding: 0.5rem;
+  background-image: var(--bg-color-accent);
+  border-radius: var(--radius);
+}
+
+.box {
+  height: 2rem;
+  display: flex;
+  align-items: center;
+}
+
+.img {
+  cursor: pointer;
+  height: 2rem;
+  margin-left: auto;
+  padding: 0 1rem;
+  transition: transform 0.4s;
+}
+
+.img:hover {
+  transform: scale(1.2);
 }
