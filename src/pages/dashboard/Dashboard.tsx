@@ -3,11 +3,13 @@ import { DataBase } from "./dataBase/DataBase";
 import { ControlPanel } from "./controlPanel/ControlPanel";
 import { Generate } from "./controlPanel/Generate";
 import { Window } from "../../components/windows/Window";
+import { Note } from "./Note.tsx/Note";
 export function Dashboard() {
   return (
     <main className={dash.main}>
       <section>
         <DataBase />
+        <Note />
       </section>
       <section>
         <ControlPanel />
