@@ -30,11 +30,11 @@ export function NumberSelection({
   };
 
   return (
-    <section className={gen.positon}>
+    <div className={gen.numberSelection}>
       <Window>
-        <p>
+        <section>
           Liczby, które wypadły od {min} do {max} losowań temu.
-        </p>
+        </section>
         <span className={gen.small}> Losowanie standardowe 1 z 50 </span>
         <div className={gen.black}>
           {data50.map((e) =>
@@ -59,6 +59,6 @@ export function NumberSelection({
           )}
         </div>
       </Window>
-    </section>
+    </div>
   );
 }

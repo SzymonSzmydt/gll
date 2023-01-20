@@ -1,5 +1,11 @@
-.position {
+.generate {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.numberSelection {
   position: relative;
+  width: 35rem;
 }
 
 .small {

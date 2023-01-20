@@ -14,41 +14,45 @@ export function Generate() {
 
   return (
     <>
-      <NumberSelection
-        min={2}
-        max={6}
-        setData={setData}
-        setIsVisible={setIsVisible}
-        data50={data50}
-      />
-      <NumberSelection
-        min={6}
-        max={11}
-        setData={setData}
-        setIsVisible={setIsVisible}
-        data50={data50}
-      />
-      <NumberSelection
-        min={11}
-        max={19}
-        setData={setData}
-        setIsVisible={setIsVisible}
-        data50={data50}
-      />
-      <NumberSelection
-        min={19}
-        max={26}
-        setData={setData}
-        setIsVisible={setIsVisible}
-        data50={data50}
-      />
-      {isVisible ? (
-        <DetailedInstances
-          data={data}
-          handleClose={() => setIsVisible(false)}
-          db={data50}
+      <div className={gen.generate}>
+        <NumberSelection
+          min={3}
+          max={7}
+          setData={setData}
+          setIsVisible={setIsVisible}
+          data50={data50}
         />
-      ) : null}
+        <NumberSelection
+          min={7}
+          max={10}
+          setData={setData}
+          setIsVisible={setIsVisible}
+          data50={data50}
+        />
+      </div>
+      <div className={gen.generate}>
+        <NumberSelection
+          min={10}
+          max={13}
+          setData={setData}
+          setIsVisible={setIsVisible}
+          data50={data50}
+        />
+        <NumberSelection
+          min={13}
+          max={20}
+          setData={setData}
+          setIsVisible={setIsVisible}
+          data50={data50}
+        />
+        {isVisible ? (
+          <DetailedInstances
+            data={data}
+            handleClose={() => setIsVisible(false)}
+            db={data50}
+          />
+        ) : null}
+      </div>
     </>
   );
 }
