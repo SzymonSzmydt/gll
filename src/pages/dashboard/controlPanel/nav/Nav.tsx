@@ -42,7 +42,7 @@ export function Nav({ setNav }: NavProps) {
         handleClick={() =>
           handleClick({ stat: false, gen: false, pair: true }, "pairs")
         }
-        isActive={isActive.gen}
+        isActive={isActive.pair}
       />
       <BtnVariant name={"EMPTY"} />
       <BtnVariant name={"EMPTY"} />

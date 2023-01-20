@@ -4,20 +4,23 @@
   font-family: cursive;
 }
 
-.textarea1 {
-  font-size: 1.1rem;
+.textarea {
   width: 99%;
+  color: var(--font);
+  font-family: cursive;
+  font-size: 1.05rem;
+  background-color: var(--bg-shadow-dark);
+  border: none;
+}
+
+.textarea1 {
+  composes: textarea;
   height: 1.25rem;
   margin: 0.25rem 0;
   text-align: center;
-  background-color: var(--bg-shadow-dark);
-  color: var(--font);
 }
 
 .textarea2 {
-  color: var(--font);
-  font-size: 1.1rem;
-  width: 99%;
+  composes: textarea;
   height: 16rem;
-  background-color: var(--bg-shadow-dark);
 }
