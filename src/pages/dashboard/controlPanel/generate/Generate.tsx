@@ -1,5 +1,4 @@
-
-import { Ball } from "../../../../components/buttons/Ball";
+import gen from "./gen.module.css";
 import { useSelector } from "react-redux";
 import { RootState } from "../../../../context/redux/Store";
 import { useState } from "react";
@@ -18,6 +17,27 @@ export function Generate() {
       <NumberSelection
         min={2}
         max={6}
+        setData={setData}
+        setIsVisible={setIsVisible}
+        data50={data50}
+      />
+      <NumberSelection
+        min={6}
+        max={11}
+        setData={setData}
+        setIsVisible={setIsVisible}
+        data50={data50}
+      />
+      <NumberSelection
+        min={11}
+        max={19}
+        setData={setData}
+        setIsVisible={setIsVisible}
+        data50={data50}
+      />
+      <NumberSelection
+        min={19}
+        max={26}
         setData={setData}
         setIsVisible={setIsVisible}
         data50={data50}
