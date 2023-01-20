@@ -1,0 +1,17 @@
+.position {
+  position: relative;
+}
+
+.small {
+  font-size: 0.75rem;
+  color: var(--font-dark);
+}
+
+.black {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0.25rem 0;
+  padding: 0.25rem;
+  border-radius: var(--radius);
+  background-color: var(--bg-shadow-dark);
+}

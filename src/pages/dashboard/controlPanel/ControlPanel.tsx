@@ -3,7 +3,7 @@ import { Nav } from "./nav/Nav";
 import { useSelector } from "react-redux";
 import { RootState } from "../../../context/redux/Store";
 import { Statistics } from "./Statistics";
-import { Generate } from "./Generate";
+import { Generate } from "./generate/Generate";
 import { useState } from "react";
 import { Pairs } from "./Pairs";
 
