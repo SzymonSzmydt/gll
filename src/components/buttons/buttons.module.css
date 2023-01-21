@@ -63,3 +63,13 @@
   composes: icon;
   background-image: url("../../assets/save.png");
 }
+
+.plus {
+  composes: icon;
+  background-image: url("../../assets/plus.png");
+}
+
+.minus {
+  composes: icon;
+  background-image: url("../../assets/minus.png");
+}

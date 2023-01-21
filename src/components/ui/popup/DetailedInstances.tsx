@@ -5,6 +5,7 @@ import { SingleTable } from "../tables/SingleTable";
 import { numberSort } from "../../../context/hooks/simple";
 import { Line } from "../../charts/Line";
 import { DataWithDraw } from "../../../context/redux/dbSlice";
+import { Bar } from "../../charts/Bar";
 
 type Data = {
   id: number[];
@@ -49,9 +50,13 @@ export function DetailedInstances({ handleClose, data, db }: DetailedProps) {
             <SingleTable name={"Wystąpienie"} data={data.draw} />
           </div>
         </section>
-        <section className={popup.chart}>
-          <Line data={lineChartData} />
-        </section>
+        <div>
+          <section className={popup.chart}>
+            <Line data={lineChartData} />
+          </section>
+          <section className={popup.chart}>
+          </section>
+        </div>
       </div>
     </WindowWithCloseBtn>
   );

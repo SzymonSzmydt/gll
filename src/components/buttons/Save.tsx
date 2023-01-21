@@ -1,7 +1,7 @@
 import btn from "./buttons.module.css";
-type DeleteProps = {
+type SaveProps = {
   handleClick: () => void;
 };
-export function Save({ handleClick }: DeleteProps) {
+export function Save({ handleClick }: SaveProps) {
   return <div className={btn.save} onClick={handleClick} />;
 }
