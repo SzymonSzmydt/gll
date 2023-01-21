@@ -33,7 +33,8 @@ export function NumberSelection({
     <div className={gen.numberSelection}>
       <Window>
         <section>
-          Liczby, które wypadły od {min} do {max} losowań temu.
+          Liczby, które wypadły od <span className={gen.green}> {min} </span> do{" "}
+          <span className={gen.green}>{max}</span> losowań temu.
         </section>
         <span className={gen.small}> Losowanie standardowe 1 z 50 </span>
         <div className={gen.black}>
