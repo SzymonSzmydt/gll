@@ -21,9 +21,14 @@ type DetailedProps = {
 export function DetailedInstances({ handleClose, data, db }: DetailedProps) {
   const sortedId = numberSort(Array(...data.id));
 
+  const chartDataStructure = data.draw.map((e, i) => ({
+    x: data["id"][i],
+    y: e,
+  }));
+
   const lineChartData = {
     id: `Liczba ${data.num}`,
-    data: data.draw.map((e, i) => ({ x: data["id"][i], y: e })),
+    data: chartDataStructure,
   };
 
   return (
@@ -54,7 +59,9 @@ export function DetailedInstances({ handleClose, data, db }: DetailedProps) {
           <section className={popup.chart}>
             <Line data={lineChartData} />
           </section>
-          <section className={popup.chart}></section>
+          <section className={popup.chart}>
+            <Bar data={chartDataStructure} />
+          </section>
         </div>
       </div>
     </WindowWithCloseBtn>

@@ -5,24 +5,20 @@ export const Bar = ({ data }: any) => (
   <ResponsiveBar
     theme={theme}
     data={data}
-    indexBy="country"
-    margin={{ top: 50, right: 130, bottom: 50, left: 60 }}
+    keys={["y"]}
+    indexBy="x"
+    margin={{ top: 50, right: 100, bottom: 50, left: 60 }}
     padding={0.3}
     groupMode="grouped"
     valueScale={{ type: "linear" }}
     indexScale={{ type: "band", round: true }}
-    colors={{ scheme: "nivo" }}
-    borderColor={{
-      from: "color",
-      modifiers: [["darker", 1.6]],
-    }}
     axisTop={null}
     axisRight={null}
     axisBottom={{
       tickSize: 5,
       tickPadding: 5,
       tickRotation: 0,
-      legend: "country",
+      legend: "LOSOWANIE",
       legendPosition: "middle",
       legendOffset: 32,
     }}
@@ -30,7 +26,7 @@ export const Bar = ({ data }: any) => (
       tickSize: 5,
       tickPadding: 5,
       tickRotation: 0,
-      legend: "food",
+      legend: "WYSTĄPIENIE",
       legendPosition: "middle",
       legendOffset: -40,
     }}
@@ -66,8 +62,5 @@ export const Bar = ({ data }: any) => (
     ]}
     role="application"
     ariaLabel="bar chart"
-    barAriaLabel={function (e) {
-      return e.id + ": " + e.formattedValue + " in country: " + e.indexValue;
-    }}
   />
 );
