@@ -1,7 +1,7 @@
-import btn from './buttons.module.css';
+import btn from "./buttons.module.css";
 type DeleteProps = {
-    handleClick: ()=> void;
-}
+  handleClick: () => void;
+};
 export function Delete({ handleClick }: DeleteProps) {
-    return <div className={btn.delete} onClick={()=> handleClick}/>
+  return <div className={btn.delete} onClick={handleClick} />;
 }
