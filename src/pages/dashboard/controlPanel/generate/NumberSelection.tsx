@@ -39,8 +39,8 @@ export function NumberSelection({
         <span className={gen.small}> Losowanie standardowe 1 z 50 </span>
         <div className={gen.black}>
           {data50.map((e) =>
-            e.draw[e.draw.length - 1] > min &&
-            e.draw[e.draw.length - 1] < max ? (
+            e.draw[e.draw.length - 1] >= min &&
+            e.draw[e.draw.length - 1] <= max ? (
               <Ball key={e.num} handleClick={() => handleClick(e)}>
                 {e.num}
               </Ball>
@@ -50,8 +50,8 @@ export function NumberSelection({
         <span className={gen.small}> Losowanie dodatkowe 1 z 12 </span>
         <div className={gen.black}>
           {data12.map((e) =>
-            e.draw[e.draw.length - 1] > min &&
-            e.draw[e.draw.length - 1] < max &&
+            e.draw[e.draw.length - 1] >= min &&
+            e.draw[e.draw.length - 1] <= max &&
             !e.date.includes(keys[keys.length - 1]) ? (
               <Ball key={e.num} handleClick={() => handleClick(e)}>
                 {e.num}

@@ -17,14 +17,14 @@ export function Generate() {
       <div className={gen.generate}>
         <NumberSelection
           min={3}
-          max={7}
+          max={4}
           setData={setData}
           setIsVisible={setIsVisible}
           data50={data50}
         />
         <NumberSelection
-          min={7}
-          max={10}
+          min={5}
+          max={8}
           setData={setData}
           setIsVisible={setIsVisible}
           data50={data50}
@@ -32,15 +32,15 @@ export function Generate() {
       </div>
       <div className={gen.generate}>
         <NumberSelection
-          min={10}
-          max={13}
+          min={9}
+          max={11}
           setData={setData}
           setIsVisible={setIsVisible}
           data50={data50}
         />
         <NumberSelection
-          min={13}
-          max={20}
+          min={12}
+          max={18}
           setData={setData}
           setIsVisible={setIsVisible}
           data50={data50}

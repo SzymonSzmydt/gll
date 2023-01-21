@@ -6,10 +6,11 @@
 .textarea {
   width: 99%;
   color: var(--font);
-  font-family: cursive;
-  font-size: 1.05rem;
+  font-family: system-ui, sans-serif;
+  font-size: 0.95rem;
   background-color: var(--bg-shadow-dark);
-  border: none;
+  box-sizing: border-box;
+  padding: 0 0.5rem;
 }
 
 .textarea1 {
