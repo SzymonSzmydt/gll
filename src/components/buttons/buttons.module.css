@@ -48,6 +48,7 @@
   height: 1.25rem;
   margin: 0 1rem;
   transition: transform 0.4s;
+  display: inline-block;
 }
 
 .icon:hover {
@@ -67,9 +68,13 @@
 .plus {
   composes: icon;
   background-image: url("../../assets/plus.png");
+  border: 2px solid var(--border-color);
+  border-radius: 8px;
 }
 
 .minus {
   composes: icon;
   background-image: url("../../assets/minus.png");
+  border: 2px solid var(--border-color);
+  border-radius: 8px;
 }

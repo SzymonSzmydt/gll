@@ -25,3 +25,8 @@
 .green {
   color: var(--green);
 }
+
+.counter {
+  display: inline-flex;
+  align-items: center;
+}

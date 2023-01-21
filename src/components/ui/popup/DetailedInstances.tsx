@@ -54,8 +54,7 @@ export function DetailedInstances({ handleClose, data, db }: DetailedProps) {
           <section className={popup.chart}>
             <Line data={lineChartData} />
           </section>
-          <section className={popup.chart}>
-          </section>
+          <section className={popup.chart}></section>
         </div>
       </div>
     </WindowWithCloseBtn>
