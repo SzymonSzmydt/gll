@@ -30,14 +30,15 @@ export function DataBase() {
 
     if (docSnap.exists()) {
       const db = Object.values(docSnap.data());
-      const data50 = addLastDrawPropperties(
-        addDrawProperties(sortedOccured(50, "normal1", db)),
-        db.length
-      );
-      const data12 = addLastDrawPropperties(
-        addDrawProperties(sortedOccured(12, "normal2", db)),
-        db.length
-      );
+      const sortOccured50 = sortedOccured(50, "normal1", db);
+      const sortOccured12 = sortedOccured(12, "normal1", db);
+
+      const addDrawPropert50 = addDrawProperties(sortOccured50);
+      const addDrawPropert12 = addDrawProperties(sortOccured12);
+
+      const data50 = addLastDrawPropperties(addDrawPropert50, db.length);
+      const data12 = addLastDrawPropperties(addDrawPropert12, db.length);
+
       dispatch(updateDb(db));
       dispatch(updateDbKeys(Object.keys(docSnap.data())));
       dispatch(updateDb50(data50));
