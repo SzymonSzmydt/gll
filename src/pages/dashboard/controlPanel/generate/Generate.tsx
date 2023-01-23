@@ -9,9 +9,7 @@ import { NumberSelection } from "./NumberSelection";
 export function Generate() {
   const [isVisible, setIsVisible] = useState(false);
   const [data, setData] = useState<DataWithDraw>({} as DataWithDraw);
-
   const data50 = useSelector((state: RootState) => state.database.data50);
-
   return (
     <>
       <div className={gen.generate}>

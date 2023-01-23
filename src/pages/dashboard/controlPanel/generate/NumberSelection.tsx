@@ -1,9 +1,9 @@
+import gen from "./gen.module.css";
 import { Window } from "../../../../components/windows/Window";
 import { Ball } from "../../../../components/buttons/Ball";
 import { useSelector } from "react-redux";
 import { RootState } from "../../../../context/redux/Store";
 import { Dispatch, SetStateAction, useState } from "react";
-import gen from "./gen.module.css";
 import { DataWithDraw } from "../../../../context/redux/dbSlice";
 import { Minus } from "../../../../components/buttons/Minus";
 import { Plus } from "../../../../components/buttons/Plus";
