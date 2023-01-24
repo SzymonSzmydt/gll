@@ -1,4 +1,5 @@
 import { DataWithDraw } from "../redux/dbSlice";
+
 export const numberSort = (element: any[]): number[] =>
   element.sort((a: any, b: any) => a - b);
 

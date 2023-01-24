@@ -2,6 +2,7 @@ import note from "./note.module.css";
 import { Window } from "../../../components/windows/Window";
 import { useState, useEffect } from "react";
 import { Delete } from "../../../components/buttons/Delete";
+import { Search } from "../../../components/buttons/Search";
 
 type TextArea = {
   line: string;
@@ -14,6 +15,7 @@ const localNoteFile = localStorage.getItem("notes")
 
 export function Note() {
   const [notes, setNotes] = useState<TextArea>(localNoteFile);
+  const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
     localStorage.setItem("notes", JSON.stringify(notes));
@@ -22,7 +24,10 @@ export function Note() {
   return (
     <Window shadow={true}>
       <form className={note.form}>
-        <label htmlFor="notes"> Notes </label>
+        <section className={note.title}>
+          Notes
+          <Search handleClick={() => setIsVisible(true)} />
+        </section>
         <textarea
           name="notes"
           value={notes.line}

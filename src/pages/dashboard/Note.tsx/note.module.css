@@ -3,6 +3,11 @@
   font-family: cursive;
 }
 
+.title {
+  display: flex;
+  justify-content: space-between;
+}
+
 .textarea {
   width: 99%;
   color: var(--font);
