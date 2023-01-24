@@ -56,13 +56,13 @@ export function NumberSelection({
       <Window>
         <section className={gen.counter}>
           Liczby, które wypadły od
-          <Plus handleClick={() => handleCounterMin("plus")} />
-          <span className={gen.green}> {minimum} </span>
           <Minus handleClick={() => handleCounterMin("minus")} />
+          <span className={gen.green}> {minimum} </span>
+          <Plus handleClick={() => handleCounterMin("plus")} />
           do
-          <Plus handleClick={() => handleCounterMax("plus")} />
-          <span className={gen.green}> {maximum} </span>
           <Minus handleClick={() => handleCounterMax("minus")} />
+          <span className={gen.green}> {maximum} </span>
+          <Plus handleClick={() => handleCounterMax("plus")} />
           losowania.
         </section>
         <span className={gen.small}> Losowanie standardowe 1 z 50 </span>

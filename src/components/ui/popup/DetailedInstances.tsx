@@ -45,7 +45,7 @@ export function DetailedInstances({ handleClose, data, db }: DetailedProps) {
                 {db
                   .map((e, i) => (e.num === data.num ? i + 1 : "X"))
                   .filter((e) => e !== "X")}
-                /50
+                / {db.length}
               </span>
             </span>
           </div>
