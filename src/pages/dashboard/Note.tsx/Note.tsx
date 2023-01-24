@@ -3,6 +3,7 @@ import { Window } from "../../../components/windows/Window";
 import { useState, useEffect } from "react";
 import { Delete } from "../../../components/buttons/Delete";
 import { Search } from "../../../components/buttons/Search";
+import { SearchResults } from "../../../components/ui/popup/SearchResults";
 
 type TextArea = {
   line: string;
@@ -44,6 +45,9 @@ export function Note() {
       <section className={note.box}>
         <Delete handleClick={() => setNotes({ line: "", multiline: "" })} />
       </section>
+      {isVisible ? (
+        <SearchResults setIsVisible={setIsVisible} numbersToFind={notes.line} />
+      ) : null}
     </Window>
   );
 }
