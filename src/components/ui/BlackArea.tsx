@@ -8,7 +8,7 @@ type BlackProps = {
 export function BlackArea({ children, name }: BlackProps) {
   return (
     <>
-      <span className={ui.small}> {name} </span>
+      <div className={ui.small}> {name} </div>
       <div className={ui.black}>{children}</div>
     </>
   );

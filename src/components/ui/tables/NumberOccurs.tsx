@@ -36,8 +36,6 @@ export function NumberOccurs({
     setIsPopupVisible(true);
     setDetailedData(item);
   };
-  console.log(data);
-
   return (
     <table className={table.table}>
       <thead>

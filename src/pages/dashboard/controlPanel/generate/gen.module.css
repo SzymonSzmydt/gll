@@ -15,6 +15,7 @@
 .counter {
   display: inline-flex;
   align-items: center;
+  margin-bottom: 0.25rem;
 }
 
 .border {

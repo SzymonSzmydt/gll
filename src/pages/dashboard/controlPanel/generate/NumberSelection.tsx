@@ -79,8 +79,7 @@ export function NumberSelection({
         <BlackArea name={"Losowanie dodatkowe 1 z 12"}>
           {data12.map((e) =>
             e.draw[e.draw.length - 1] >= minimum &&
-            e.draw[e.draw.length - 1] <= maximum &&
-            !e.date.includes(keys[keys.length - 1]) ? (
+            e.draw[e.draw.length - 1] <= maximum ? (
               <Ball key={e.num} handleClick={() => handleClick(e)}>
                 {e.num}
               </Ball>
