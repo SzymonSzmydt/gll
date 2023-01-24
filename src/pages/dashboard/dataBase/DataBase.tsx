@@ -31,7 +31,7 @@ export function DataBase() {
     if (docSnap.exists()) {
       const db = Object.values(docSnap.data());
       const sortOccured50 = sortedOccured(50, "normal1", db);
-      const sortOccured12 = sortedOccured(12, "normal1", db);
+      const sortOccured12 = sortedOccured(12, "normal2", db);
 
       const addDrawPropert50 = addDrawProperties(sortOccured50);
       const addDrawPropert12 = addDrawProperties(sortOccured12);

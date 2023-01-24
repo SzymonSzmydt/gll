@@ -19,8 +19,6 @@ export function SearchResults({ numbersToFind, setIsVisible }: SearchProsp) {
     ? Array.from(new Set(numbersToFind.split(".").map((e) => +e)))
     : Array.from(new Set(numbersToFind.split(" ").map((e) => +e)));
   const resultOfSearch = checkIfNumbersAreInDb(arrayNumbersToFind, db);
-  console.log(resultOfSearch);
-
   return (
     <WindowWithCloseBtn handleClose={() => setIsVisible(false)}>
       {resultOfSearch.length > 0 ? (
@@ -44,10 +42,10 @@ export function SearchResults({ numbersToFind, setIsVisible }: SearchProsp) {
             ))}
           </section>
         </>
+      ) : db.length > 0 ? (
+        <p>Nie znaleziono nic podobnego do podanej frazy!</p>
       ) : (
-        <p>
-          Dane do przeszukania, muszą być liczbami, które są od siebie różne!
-        </p>
+        <p> Zaktualizuj bazę z liczbami ! </p>
       )}
     </WindowWithCloseBtn>
   );
