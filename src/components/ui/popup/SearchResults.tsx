@@ -15,6 +15,8 @@ export function SearchResults({ numbersToFind, setIsVisible }: SearchProsp) {
   const db = useSelector((state: RootState) => state.database.value);
   const arrayNumbersToFind: number[] = numbersToFind.includes(",")
     ? Array.from(new Set(numbersToFind.split(",").map((e) => +e)))
+    : numbersToFind.includes(".")
+    ? Array.from(new Set(numbersToFind.split(".").map((e) => +e)))
     : Array.from(new Set(numbersToFind.split(" ").map((e) => +e)));
   const resultOfSearch = checkIfNumbersAreInDb(arrayNumbersToFind, db);
   console.log(resultOfSearch);
@@ -43,7 +45,9 @@ export function SearchResults({ numbersToFind, setIsVisible }: SearchProsp) {
           </section>
         </>
       ) : (
-        "Dane do przeszukania, muszą być liczbami, które są od siebie różne"
+        <p>
+          Dane do przeszukania, muszą być liczbami, które są od siebie różne!
+        </p>
       )}
     </WindowWithCloseBtn>
   );
