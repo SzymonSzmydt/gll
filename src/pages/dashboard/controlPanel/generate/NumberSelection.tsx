@@ -7,6 +7,7 @@ import { Dispatch, SetStateAction, useState } from "react";
 import { DataWithDraw } from "../../../../context/redux/dbSlice";
 import { Minus } from "../../../../components/buttons/Minus";
 import { Plus } from "../../../../components/buttons/Plus";
+import { BlackArea } from "../../../../components/ui/BlackArea";
 
 type NumberSelectionProps = {
   min: number;
@@ -65,8 +66,7 @@ export function NumberSelection({
           <Plus handleClick={() => handleCounterMax("plus")} />
           losowania.
         </section>
-        <span className={gen.small}> Losowanie standardowe 1 z 50 </span>
-        <div className={gen.black}>
+        <BlackArea name={"Losowanie standardowe 1 z 50"}>
           {data50.map((e) =>
             e.draw[e.draw.length - 1] >= minimum &&
             e.draw[e.draw.length - 1] <= maximum ? (
@@ -75,9 +75,8 @@ export function NumberSelection({
               </Ball>
             ) : null
           )}
-        </div>
-        <span className={gen.small}> Losowanie dodatkowe 1 z 12 </span>
-        <div className={gen.black}>
+        </BlackArea>
+        <BlackArea name={"Losowanie dodatkowe 1 z 12"}>
           {data12.map((e) =>
             e.draw[e.draw.length - 1] >= minimum &&
             e.draw[e.draw.length - 1] <= maximum &&
@@ -87,7 +86,7 @@ export function NumberSelection({
               </Ball>
             ) : null
           )}
-        </div>
+        </BlackArea>
       </Window>
     </div>
   );
