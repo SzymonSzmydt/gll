@@ -1,15 +1,16 @@
+import ctr from "./control.module.css";
 import { Window } from "../../../components/windows/Window";
-import { Db, DataWithDraw } from "../../../context/redux/dbSlice";
+import { DataWithDraw } from "../../../context/redux/dbSlice";
 
 type PairsProps = {
-  db: Db[];
   data50: DataWithDraw[];
 };
 
-export function Pairs({ db, data50 }: PairsProps) {
+export function Pairs({ data50 }: PairsProps) {
   return (
     <Window>
-      <p> W budowie</p>
+      <p> Wykres przedstawia wystąpienia wszystkich liczb </p>
+      <div className={ctr.chart}></div>
     </Window>
   );
 }

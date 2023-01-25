@@ -21,7 +21,7 @@ export function ControlPanel() {
       ) : nav === "generate" ? (
         <Generate />
       ) : nav === "pairs" ? (
-        <Pairs db={db} data50={data50} />
+        <Pairs data50={data50} />
       ) : null}
     </Window>
   ) : null;

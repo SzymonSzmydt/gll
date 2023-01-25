@@ -6,3 +6,8 @@
   width: 100%;
   text-align: center;
 }
+
+.chart {
+  width: 40rem;
+  height: 30rem;
+}

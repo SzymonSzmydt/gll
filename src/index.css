@@ -20,6 +20,8 @@
   --green: #77c404;
 
   --light: rgb(73, 255, 240);
+
+  scroll-behavior: smooth;
 }
 
 body {

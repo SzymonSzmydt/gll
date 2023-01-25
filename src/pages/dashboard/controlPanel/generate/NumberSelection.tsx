@@ -26,7 +26,6 @@ export function NumberSelection({
 }: NumberSelectionProps) {
   const [minimum, setMinimum] = useState(min);
   const [maximum, setMaximum] = useState(max);
-  const keys = useSelector((state: RootState) => state.database.keys);
   const data12 = useSelector((state: RootState) => state.database.data12);
 
   const handleClick = (item: DataWithDraw) => {
