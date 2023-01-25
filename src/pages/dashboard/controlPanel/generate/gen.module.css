@@ -5,15 +5,18 @@
 
 .numberSelection {
   position: relative;
-  width: 35rem;
+  width: 50%;
+  box-sizing: border-box;
 }
 
 .green {
   color: var(--green);
+  font-weight: 600;
 }
 
 .counter {
   display: inline-flex;
   align-items: center;
-  margin-bottom: 0.25rem;
+  padding: 0.25rem;
+  font-size: 0.9rem;
 }
