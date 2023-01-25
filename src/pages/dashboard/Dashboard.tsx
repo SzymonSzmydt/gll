@@ -4,7 +4,7 @@ import { ControlPanel } from "./controlPanel/ControlPanel";
 import { Generate } from "./controlPanel/generate/Generate";
 import { Window } from "../../components/windows/Window";
 import { Note } from "./Note.tsx/Note";
-import { FindNumbers } from "./controlPanel/generate/FindNumbers";
+import { FindNumbers } from "./controlPanel/FindNumbers";
 import { useSelector } from "react-redux";
 import { RootState } from "../../context/redux/Store";
 export function Dashboard() {

@@ -17,14 +17,3 @@
   align-items: center;
   margin-bottom: 0.25rem;
 }
-
-.border {
-  width: 1.15rem;
-  display: inline-block;
-  text-align: center;
-  padding: 0.15rem 0.25rem;
-  margin: 0 0.5rem;
-  border: 2px solid var(--border-color);
-  border-radius: 8px;
-  color: var(--green);
-}

@@ -1,11 +1,10 @@
 import { WindowWithCloseBtn } from "../../windows/WindowWithCloseBtn";
 import { BlackArea } from "../BlackArea";
 import { Ball } from "../../buttons/Ball";
-import { Dispatch, SetStateAction, useEffect } from "react";
+import { Dispatch, SetStateAction } from "react";
 import { checkIfNumbersAreInDb } from "../../../context/hooks/SearchDatabase";
 import { useSelector } from "react-redux";
 import { RootState } from "../../../context/redux/Store";
-import { useRef } from "react";
 
 type SearchProsp = {
   numbersToFind: string;
@@ -22,22 +21,12 @@ export function SearchResults({ numbersToFind, setIsVisible }: SearchProsp) {
     : Array.from(new Set(numbersToFind.split(" ").map((e) => +e)));
 
   const resultOfSearch = checkIfNumbersAreInDb(arrayNumbersToFind, db);
-
-  const scrollRef = useRef<HTMLHRElement | null>(null);
-
-  useEffect(() => {
-    scrollRef.current?.scrollIntoView({
-      behavior: "smooth",
-      block: "start",
-      inline: "center",
-    });
-  });
   return (
     <WindowWithCloseBtn handleClose={() => setIsVisible(false)}>
       {resultOfSearch.length > 0 ? (
         <>
           Lista wyników
-          <hr ref={scrollRef} />
+          <hr />
           <BlackArea name={"Szukane Liczby"}>
             {arrayNumbersToFind.map((e) => (
               <Ball key={e}> {e} </Ball>

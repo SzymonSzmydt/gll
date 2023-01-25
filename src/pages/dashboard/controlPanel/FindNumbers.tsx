@@ -1,9 +1,10 @@
-import gen from "./gen.module.css";
-import { Window } from "../../../../components/windows/Window";
+import ctr from "./control.module.css";
+import { Window } from "../../../components/windows/Window";
 import { useSelector } from "react-redux";
-import { RootState } from "../../../../context/redux/Store";
-import { Ball } from "../../../../components/buttons/Ball";
-import { DataWithDraw } from "../../../../context/redux/dbSlice";
+import { RootState } from "../../../context/redux/Store";
+import { Ball } from "../../../components/buttons/Ball";
+import { DataWithDraw } from "../../../context/redux/dbSlice";
+import { BlackArea } from "../../../components/ui/BlackArea";
 
 type FindNumbersProps = {
   data50: DataWithDraw[];
@@ -41,19 +42,17 @@ export function FindNumbers({ data50 }: FindNumbersProps) {
     <Window shadow={true}>
       Losowania:
       {autoFindWinerNumber().occures.map((e) => (
-        <div className={gen.border} key={e}>
+        <div className={ctr.border} key={e}>
           {e}
         </div>
       ))}
-      <div>
-        {autoFindWinerNumber().data.map((e, i) => (
-          <div key={i} className={gen.black}>
-            {e.map((s) => (
-              <Ball key={s}> {s} </Ball>
-            ))}
-          </div>
-        ))}
-      </div>
+      {autoFindWinerNumber().data.map((e, i) => (
+        <BlackArea>
+          {e.map((s) => (
+            <Ball key={s}> {s} </Ball>
+          ))}
+        </BlackArea>
+      ))}
     </Window>
   ) : null;
 }

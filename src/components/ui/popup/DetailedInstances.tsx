@@ -6,7 +6,6 @@ import { numberSort } from "../../../context/hooks/simple";
 import { Line } from "../../charts/Line";
 import { DataWithDraw } from "../../../context/redux/dbSlice";
 import { Bar } from "../../charts/Bar";
-import { useRef, useEffect } from "react";
 
 type Data = {
   id: number[];
@@ -21,7 +20,6 @@ type DetailedProps = {
 };
 export function DetailedInstances({ handleClose, data, db }: DetailedProps) {
   const sortedId = numberSort(Array(...data.id));
-  const scrollRef = useRef<HTMLHRElement | null>(null);
 
   const chartDataStructure = data.draw.map((e, i) => ({
     x: data["id"][i],
@@ -33,17 +31,9 @@ export function DetailedInstances({ handleClose, data, db }: DetailedProps) {
     data: chartDataStructure,
   };
 
-  useEffect(() => {
-    scrollRef.current?.scrollIntoView({
-      behavior: "smooth",
-      block: "start",
-      inline: "center",
-    });
-  });
-
   return (
     <WindowWithCloseBtn handleClose={handleClose}>
-      <div className={popup.flex} ref={scrollRef}>
+      <div className={popup.flex} >
         <section>
           <div className={popup.p}>
             Liczba <Ball> {data.num} </Ball> wystąpiła&nbsp;
