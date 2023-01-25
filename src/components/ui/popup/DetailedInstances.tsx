@@ -36,7 +36,7 @@ export function DetailedInstances({ handleClose, data, db }: DetailedProps) {
   useEffect(() => {
     scrollRef.current?.scrollIntoView({
       behavior: "smooth",
-      block: "center",
+      block: "start",
       inline: "center",
     });
   });
