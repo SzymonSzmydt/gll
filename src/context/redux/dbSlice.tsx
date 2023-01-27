@@ -19,14 +19,12 @@ export type DataWithDraw = {
 
 export interface DbState {
   value: Array<Db>;
-  keys: string[];
   data50: DataWithDraw[];
   data12: DataWithDraw[];
 }
 
 const initialState: DbState = {
   value: [],
-  keys: [],
   data50: [],
   data12: [],
 };
@@ -38,9 +36,6 @@ export const dbSlice = createSlice({
     updateDb: (state, action: PayloadAction<Array<Db>>) => {
       state.value = action.payload;
     },
-    updateDbKeys: (state, action: PayloadAction<string[]>) => {
-      state.keys = action.payload.sort();
-    },
     updateDb50: (state, action: PayloadAction<Array<DataWithDraw>>) => {
       state.data50 = action.payload;
     },
@@ -50,6 +45,5 @@ export const dbSlice = createSlice({
   },
 });
 
-export const { updateDb, updateDb50, updateDb12, updateDbKeys } =
-  dbSlice.actions;
+export const { updateDb, updateDb50, updateDb12 } = dbSlice.actions;
 export default dbSlice.reducer;

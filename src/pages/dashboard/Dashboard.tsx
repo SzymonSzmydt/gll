@@ -8,12 +8,7 @@ import { FindNumbers } from "./controlPanel/FindNumbers";
 import { useSelector } from "react-redux";
 import { doc, getDoc } from "firebase/firestore";
 import { useDispatch } from "react-redux";
-import {
-  updateDb,
-  updateDb50,
-  updateDb12,
-  updateDbKeys,
-} from "../../context/redux/dbSlice";
+import { updateDb, updateDb50, updateDb12 } from "../../context/redux/dbSlice";
 import { dataBase } from "../../context/firebase/firebase";
 import { sortedOccured } from "../../context/hooks/functions";
 import { RootState } from "../../context/redux/Store";
@@ -43,7 +38,6 @@ export function Dashboard() {
       const data12 = addLastDrawPropperties(addDrawPropert12, db.length);
 
       dispatch(updateDb(db));
-      dispatch(updateDbKeys(Object.keys(docSnap.data())));
       dispatch(updateDb50(data50));
       dispatch(updateDb12(data12));
     } else {
