@@ -5,20 +5,24 @@ import { Generate } from "./controlPanel/generate/Generate";
 import { Window } from "../../components/windows/Window";
 import { Note } from "./Note.tsx/Note";
 import { FindNumbers } from "./controlPanel/FindNumbers";
-import { useSelector } from "react-redux";
 import { doc, getDoc } from "firebase/firestore";
 import { useDispatch } from "react-redux";
-import { updateDb, updateDb50, updateDb12 } from "../../context/redux/dbSlice";
+import {
+  updateDb,
+  updateDb50,
+  updateDb12,
+  DataWithDraw,
+} from "../../context/redux/dbSlice";
 import { dataBase } from "../../context/firebase/firebase";
 import { sortedOccured } from "../../context/hooks/functions";
-import { RootState } from "../../context/redux/Store";
+import { useState } from "react";
 import {
   addDrawProperties,
   addLastDrawPropperties,
 } from "../../context/hooks/simple";
 
 export function Dashboard() {
-  const data50 = useSelector((state: RootState) => state.database.data50);
+  const [data50, setData50] = useState<DataWithDraw[] | []>([]);
 
   const dispatch = useDispatch();
 
@@ -37,6 +41,8 @@ export function Dashboard() {
       const data50 = addLastDrawPropperties(addDrawPropert50, db.length);
       const data12 = addLastDrawPropperties(addDrawPropert12, db.length);
 
+      setData50(data50);
+
       dispatch(updateDb(db));
       dispatch(updateDb50(data50));
       dispatch(updateDb12(data12));
@@ -53,7 +59,7 @@ export function Dashboard() {
         <FindNumbers data50={data50} />
       </section>
       <section>
-        <ControlPanel />
+        <ControlPanel data50={data50} />
         <Window shadow={true}>
           <Generate />
         </Window>

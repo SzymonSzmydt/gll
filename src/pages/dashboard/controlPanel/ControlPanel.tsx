@@ -7,11 +7,15 @@ import { Statistics } from "./Statistics";
 import { Generate } from "./generate/Generate";
 import { useState } from "react";
 import { Pairs } from "./Pairs";
+import { DataWithDraw } from '../../../context/redux/dbSlice';
 
-export function ControlPanel() {
+type ControlProps = {
+  data50: DataWithDraw[];
+};
+
+export function ControlPanel({ data50 }: ControlProps) {
   const [nav, setNav] = useState("statistics");
   const db = useSelector((state: RootState) => state.database.value);
-  const data50 = useSelector((state: RootState) => state.database.data50);
   const data12 = useSelector((state: RootState) => state.database.data12);
 
   return db.length > 0 ? (
