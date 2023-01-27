@@ -4,49 +4,14 @@ import { DbAddRecord } from "./records/DbAddRecord";
 import { DbView } from "./records/DbView";
 import { Window } from "../../../components/windows/Window";
 import { BtnVariant } from "../../../components/buttons/BtnVariant";
-import { doc, getDoc } from "firebase/firestore";
-import { useDispatch } from "react-redux";
-import {
-  updateDb,
-  updateDb50,
-  updateDb12,
-  updateDbKeys,
-} from "../../../context/redux/dbSlice";
-import { dataBase } from "../../../context/firebase/firebase";
-import { sortedOccured } from "../../../context/hooks/functions";
-import {
-  addDrawProperties,
-  addLastDrawPropperties,
-} from "../../../context/hooks/simple";
 
-export function DataBase() {
+type DataBaseProps = {
+  uploadDataFromServer: ()=> void;
+};
+
+export function DataBase({ uploadDataFromServer }: DataBaseProps) {
   const [dbAdd, setDbAdd] = useState(false);
   const [isSorted, setIsSorted] = useState(false);
-  const dispatch = useDispatch();
-
-  const uploadDataFromServer = async () => {
-    const docRef = doc(dataBase, "jackpot", "db");
-    const docSnap = await getDoc(docRef);
-
-    if (docSnap.exists()) {
-      const db = Object.values(docSnap.data());
-      const sortOccured50 = sortedOccured(50, "normal1", db);
-      const sortOccured12 = sortedOccured(12, "normal2", db);
-
-      const addDrawPropert50 = addDrawProperties(sortOccured50);
-      const addDrawPropert12 = addDrawProperties(sortOccured12);
-
-      const data50 = addLastDrawPropperties(addDrawPropert50, db.length);
-      const data12 = addLastDrawPropperties(addDrawPropert12, db.length);
-
-      dispatch(updateDb(db));
-      dispatch(updateDbKeys(Object.keys(docSnap.data())));
-      dispatch(updateDb50(data50));
-      dispatch(updateDb12(data12));
-    } else {
-      console.log("No such document!");
-    }
-  };
 
   return (
     <Window shadow={true}>
