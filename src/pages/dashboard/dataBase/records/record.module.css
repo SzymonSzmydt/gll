@@ -8,11 +8,11 @@
 }
 
 .number50 {
-  width: 13.75rem;
+  width: 50%;
 }
 
 .number2 {
-  width: 5.5rem;
+  width: 30%;
 }
 
 .signal {
@@ -31,7 +31,7 @@
 .date {
   appearance: none;
   cursor: pointer;
-  margin: 0 0.5rem;
+  margin: 0.5rem 0 0;
   padding: 0.25rem 1rem;
   width: 8rem;
   height: 1.78rem;

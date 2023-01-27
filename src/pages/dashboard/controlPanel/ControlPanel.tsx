@@ -1,3 +1,4 @@
+import ctr from "./control.module.css";
 import { Window } from "../../../components/windows/Window";
 import { Nav } from "./nav/Nav";
 import { useSelector } from "react-redux";
@@ -15,14 +16,16 @@ export function ControlPanel() {
 
   return db.length > 0 ? (
     <Window shadow={true}>
-      <Nav setNav={setNav} />
-      {nav === "statistics" ? (
-        <Statistics data50={data50} data12={data12} lengths={db?.length} />
-      ) : nav === "generate" ? (
-        <Generate />
-      ) : nav === "pairs" ? (
-        <Pairs data50={data50} />
-      ) : null}
+      <div className={ctr.control}>
+        <Nav setNav={setNav} />
+        {nav === "statistics" ? (
+          <Statistics data50={data50} data12={data12} lengths={db?.length} />
+        ) : nav === "generate" ? (
+          <Generate />
+        ) : nav === "pairs" ? (
+          <Pairs data50={data50} />
+        ) : null}
+      </div>
     </Window>
   ) : null;
 }

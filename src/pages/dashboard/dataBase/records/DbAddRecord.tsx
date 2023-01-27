@@ -90,10 +90,9 @@ export function DbAddRecord() {
           {num}
         </Ball>
       ))}
+      <hr />
       <input type="date" ref={dateRef} className={db.date} />
       <BtnVariant name="ZAPISZ" handleClick={saveNumbersToFirestore} />
-      <br />
-      <span></span>
     </>
   );
 }
