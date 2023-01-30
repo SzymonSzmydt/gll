@@ -66,14 +66,15 @@ export function NumberSelection({
           losowania.
         </section>
         <BlackArea name={"Losowanie standardowe 1 z 50"}>
-          {data50.map((e) =>
-            e.draw[e.draw.length - 1] >= minimum &&
-            e.draw[e.draw.length - 1] <= maximum ? (
-              <Ball key={e.num} handleClick={() => handleClick(e)}>
-                {e.num}
-              </Ball>
-            ) : null
-          )}
+          {data50
+            .map((e) =>
+              e.draw[e.draw.length - 1] >= minimum &&
+              e.draw[e.draw.length - 1] <= maximum ? (
+                <Ball key={e.num} handleClick={() => handleClick(e)}>
+                  {e.num}
+                </Ball>
+              ) : null
+            )}
         </BlackArea>
         <BlackArea name={"Losowanie dodatkowe 1 z 12"}>
           {data12.map((e) =>

@@ -27,7 +27,7 @@
 
 .textarea2 {
   composes: textarea;
-  height: 16rem;
+  height: 12rem;
 }
 
 .box {
