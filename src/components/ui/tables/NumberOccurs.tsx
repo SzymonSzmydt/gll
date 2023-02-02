@@ -36,6 +36,7 @@ export function NumberOccurs({
     setIsPopupVisible(true);
     setDetailedData(item);
   };
+  const oldNum = (n: number) => (n >= 25 ? table.tdAccent : table.td);
   return (
     <table className={table.table}>
       <thead>
@@ -43,7 +44,8 @@ export function NumberOccurs({
           <td className={table.tdHead}> Lp </td>
           <td className={table.tdHead}> nr </td>
           <td className={table.tdHead}> Wystąpienia </td>
-          <td className={table.tdHead}> Oscylacja </td>
+          <td className={table.tdHead}> % </td>
+          <td className={table.tdHead}> Ost. </td>
         </tr>
       </thead>
       <tbody>
@@ -61,6 +63,9 @@ export function NumberOccurs({
                 <td className={table.td}> {e["date"].length} </td>
                 <td className={table.td}>
                   {`${((e["date"].length / lengths) * 100).toFixed()} %`}
+                </td>
+                <td className={oldNum(e["draw"][e.draw.length - 1])}>
+                  {e["draw"].at(-1)}
                 </td>
               </tr>
             ))

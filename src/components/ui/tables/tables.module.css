@@ -66,6 +66,11 @@
   font-size: 0.85rem;
 }
 
+.tdAccent {
+  composes: td;
+  color: var(--red);
+}
+
 .lp {
   text-align: center;
   font-size: 0.7rem;

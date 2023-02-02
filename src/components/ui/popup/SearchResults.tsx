@@ -36,7 +36,7 @@ export function SearchResults({ numbersToFind, setIsVisible }: SearchProsp) {
             Wystąpienia
             <hr />
             {resultOfSearch.map((e) => (
-              <BlackArea name={e.date}>
+              <BlackArea name={e.date} key={(e.date)}>
                 {e.nums.map((num) => (
                   <Ball key={num}> {num} </Ball>
                 ))}
