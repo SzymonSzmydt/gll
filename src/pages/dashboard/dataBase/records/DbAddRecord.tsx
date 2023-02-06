@@ -57,6 +57,8 @@ export function DbAddRecord() {
       setBallNumber2([]);
     } else console.error(" błąd ");
   };
+  console.log(dateRef.current?.value);
+
   return (
     <>
       <Window>
@@ -92,7 +94,9 @@ export function DbAddRecord() {
       ))}
       <hr />
       <input type="date" ref={dateRef} className={db.date} />
-      <BtnVariant name="ZAPISZ" handleClick={saveNumbersToFirestore} />
+      {dateRef.current?.value ? (
+        <BtnVariant name="ZAPISZ" handleClick={saveNumbersToFirestore} />
+      ) : null}
     </>
   );
 }
