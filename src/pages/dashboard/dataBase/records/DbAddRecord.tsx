@@ -94,7 +94,9 @@ export function DbAddRecord() {
       ))}
       <hr />
       <input type="date" ref={dateRef} className={db.date} />
-      {dateRef.current?.value ? (
+      {dateRef.current?.value &&
+      ballNumber50.length === 5 &&
+      ballNumber2.length === 2 ? (
         <BtnVariant name="ZAPISZ" handleClick={saveNumbersToFirestore} />
       ) : null}
     </>
